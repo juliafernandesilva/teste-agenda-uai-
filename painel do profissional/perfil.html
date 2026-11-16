@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgendaUai - Perfil profissional</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="forms.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/agenda-uai-theme.css">
+</head>
+<body data-page="perfil">
+  <header>
+    <a href="../home/index.html" class="brand"><span class="brand-text"><span class="text-blue">Agenda</span><span class="text-green">Uai</span></span></a>
+    <div class="header-actions">
+      <a href="index.html" class="user-pill"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span>Voltar ao painel</span></a>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Voltar ao painel</a>
+      <h1>Perfil profissional</h1>
+      <p>Atualize os dados da sua conta e da loja selecionada.</p>
+    </div>
+
+    <div class="profile-editor-layout">
+      <section class="content-box form-box" aria-labelledby="perfil-form-titulo">
+        <div class="box-header"><h2 id="perfil-form-titulo">Seus dados</h2></div>
+        <form id="perfil-form" class="form-grid" novalidate>
+          <div class="field">
+            <label for="perfil-nome">Nome da loja *</label>
+            <input id="perfil-nome" type="text" maxlength="120" required placeholder="Ex.: Studio Bela Unha">
+          </div>
+          <div class="field">
+            <label for="perfil-profissional">Seu nome completo *</label>
+            <input id="perfil-profissional" type="text" maxlength="120" required placeholder="Ex.: Ana Santos">
+          </div>
+          <div class="field">
+            <label for="perfil-especialidade">Categoria da loja *</label>
+            <select id="perfil-especialidade" required><option value="">Selecione uma categoria</option></select>
+          </div>
+          <div class="field">
+            <label for="perfil-descricao">Sobre o trabalho</label>
+            <textarea id="perfil-descricao" maxlength="400" placeholder="Conte quais serviços você oferece e o que torna seu atendimento especial."></textarea>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="perfil-telefone">Telefone / WhatsApp da loja</label>
+              <input id="perfil-telefone" type="tel" maxlength="20" placeholder="(31) 99999-9999">
+            </div>
+            <div class="field">
+              <label for="perfil-instagram">Instagram</label>
+              <input id="perfil-instagram" type="text" maxlength="80" placeholder="@seuperfil">
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="perfil-cep">CEP</label><input id="perfil-cep" type="text" maxlength="9" placeholder="00000-000"></div>
+            <div class="field"><label for="perfil-rua">Rua</label><input id="perfil-rua" type="text" maxlength="140" placeholder="Nome da rua"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="perfil-numero">Número</label><input id="perfil-numero" type="text" maxlength="20" placeholder="Número"></div>
+            <div class="field"><label for="perfil-complemento">Complemento</label><input id="perfil-complemento" type="text" maxlength="100" placeholder="Sala, loja, bloco (opcional)"></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="perfil-bairro">Bairro</label><input id="perfil-bairro" type="text" maxlength="100" placeholder="Bairro"></div>
+            <div class="field"><label for="perfil-cidade">Cidade</label><input id="perfil-cidade" type="text" maxlength="100" placeholder="Cidade"></div>
+            <div class="field"><label for="perfil-estado">UF</label><input id="perfil-estado" type="text" maxlength="2" placeholder="MG"></div>
+          </div>
+          <div class="field">
+            <label for="perfil-foto">Foto profissional (opcional)</label>
+            <input id="perfil-foto" type="file" accept="image/*">
+            <span class="field-hint">A foto será salva no armazenamento de imagens da loja. Limite de 5 MB.</span>
+          </div>
+          <div class="form-actions profile-form-actions">
+            <button type="submit" class="btn-action btn-red"><i class="fa-solid fa-floppy-disk" aria-hidden="true"></i> Salvar perfil</button>
+          </div>
+          <p class="form-msg" id="perfil-msg" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="content-box profile-preview" aria-labelledby="perfil-preview-titulo">
+        <div class="box-header"><h2 id="perfil-preview-titulo">Prévia do perfil</h2></div>
+        <div class="preview-avatar" id="preview-avatar">BA</div>
+        <h2 id="preview-nome">Seu nome profissional</h2>
+        <p class="preview-specialty" id="preview-especialidade">Sua área de atuação</p>
+        <p class="preview-description" id="preview-descricao">A descrição do seu perfil aparecerá aqui.</p>
+        <div class="preview-details">
+          <p><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> <span id="preview-telefone">Adicione seu WhatsApp</span></p>
+          <p><i class="fa-solid fa-location-dot" aria-hidden="true"></i> <span id="preview-endereco">Adicione sua região de atendimento</span></p>
+          <p><i class="fa-brands fa-instagram" aria-hidden="true"></i> <span id="preview-instagram">Adicione seu Instagram</span></p>
+        </div>
+        <a href="servicos.html" class="btn-action btn-red-outline"><i class="fa-solid fa-scissors" aria-hidden="true"></i> Ver cadastro de serviços</a>
+      </section>
+    </div>
+
+    <section class="content-box portfolio-manager" aria-labelledby="portfolio-titulo">
+      <div class="portfolio-heading">
+        <div>
+          <h2 id="portfolio-titulo">Fotos dos seus trabalhos</h2>
+          <p>Mostre exemplos do seu trabalho no perfil público da loja.</p>
+        </div>
+        <span class="field-hint">JPG, PNG ou WEBP · até 5 MB por imagem · máximo de 12 fotos</span>
+      </div>
+      <div class="portfolio-upload">
+        <label class="portfolio-file-button" for="perfil-fotos-trabalho"><i class="fa-solid fa-images" aria-hidden="true"></i> Escolher fotos</label>
+        <input id="perfil-fotos-trabalho" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+        <input id="perfil-foto-legenda" type="text" maxlength="120" placeholder="Legenda opcional para estas fotos">
+        <button type="button" id="perfil-fotos-enviar" class="btn-action btn-red"><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i> Adicionar ao perfil</button>
+      </div>
+      <p class="form-msg" id="portfolio-msg" role="status" aria-live="polite"></p>
+      <div class="portfolio-grid" id="portfolio-grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer><div class="footer-bottom">&copy; 2026 AgendaUai — Projeto acadêmico, PUC Minas.</div></footer>
+  <script src="../shared/agenda-uai-api.js"></script>
+  <script src="../shared/auth-guard.js"></script>
+  <script src="storage.js"></script>
+  <script src="script.js"></script>
+  <script src="perfil.js"></script>
+</body>
+</html>

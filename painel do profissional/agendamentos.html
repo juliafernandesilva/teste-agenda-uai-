@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgendaUai - Agendamentos do Mês</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="agendamentos.css?v=20261112-lista-mes">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/agenda-uai-theme.css">
+</head>
+
+<body data-page="agendamentos">
+  <input
+    type="checkbox"
+    id="ag-toggle"
+    class="ag-toggle"
+    aria-hidden="true"
+    tabindex="-1">
+  <input
+    type="checkbox"
+    id="ag-disponibilidade-toggle"
+    class="ag-toggle"
+    aria-hidden="true"
+    tabindex="-1">
+
+  <header>
+    <a href="../home/index.html" class="brand">
+      <svg
+        class="brand-logo"
+        viewBox="0 0 100 100"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient
+            id="agendaUaiGrad"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%">
+            <stop offset="0%" stop-color="#1B4A70" />
+            <stop offset="100%" stop-color="#38C184" />
+          </linearGradient>
+        </defs>
+
+        <rect
+          x="12"
+          y="22"
+          width="76"
+          height="68"
+          rx="18"
+          stroke="url(#agendaUaiGrad)"
+          stroke-width="9"
+          fill="none" />
+        <rect
+          x="30"
+          y="10"
+          width="8"
+          height="18"
+          rx="4"
+          fill="#1B4A70" />
+        <rect
+          x="62"
+          y="10"
+          width="8"
+          height="18"
+          rx="4"
+          fill="#38C184" />
+        <path
+          d="M50 36C42.268 36 36 42.268 36 50
+             C36 60.5 50 74 50 74
+             C50 74 64 60.5 64 50
+             C64 42.268 57.732 36 50 36Z"
+          fill="#1B4A70" />
+        <circle cx="50" cy="48" r="7" fill="#ffffff" />
+        <path
+          d="M46.5 48L49 50.5L53.5 45.5"
+          stroke="#38C184"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+
+      <span class="brand-text">
+        <span class="text-blue">Agenda</span><span class="text-green">Uai</span>
+      </span>
+    </a>
+
+    <div class="header-actions">
+      <a href="index.html" class="btn-action btn-red-outline">
+        <i class="fa-solid fa-arrow-left"></i>
+        Voltar ao painel
+      </a>
+
+      <a
+        href="https://calendar.google.com/calendar/u/0/r/month"
+        class="btn-action btn-ghost"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Abrir Google Agenda em uma nova aba">
+        <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+        Abrir Google Agenda
+      </a>
+
+    
+    </div>
+  </header>
+
+  <main>
+    <section class="ag-topo">
+      <div>
+        <h1 class="ag-titulo">Agendamentos do Mês</h1>
+        <p class="ag-subtitulo">
+          Acompanhe, confirme e organize os atendimentos do seu
+          estabelecimento.
+        </p>
+      </div>
+
+      <div class="ag-topo-acoes">
+        <button type="button" class="btn-action btn-red ag-novo-agendamento" disabled title="Disponível quando o cliente tiver uma conta AgendaUai">
+          Agendamento manual em breve
+        </button>
+        <label for="ag-disponibilidade-toggle" class="btn-action btn-ghost ag-label-btn ag-horarios-btn">
+          <i class="fa-regular fa-clock" aria-hidden="true"></i>
+          Horários de atendimento
+        </label>
+        <div class="ag-mes-nav">
+          <i class="fa-regular fa-calendar"></i>
+          <strong>Outubro 2026</strong>
+        </div>
+      </div>
+    </section>
+    <section class="metrics-grid ag-resumo">
+      <div class="metric-card">
+        <h3>Total no mês</h3>
+        <div class="metric-value">0</div>
+        <div class="metric-sub">Nenhum agendamento neste mês</div>
+      </div>
+
+      <div class="metric-card">
+        <h3>Pendentes</h3>
+        <div class="metric-value">0</div>
+        <div class="metric-sub">Aguardando confirmação</div>
+      </div>
+
+      <div class="metric-card">
+        <h3>Concluídos</h3>
+        <div class="metric-value">0</div>
+        <div class="metric-sub">Atendimentos finalizados</div>
+      </div>
+
+      <div class="metric-card">
+        <h3>Faturamento</h3>
+        <div class="metric-value">R$ 0,00</div>
+        <div class="metric-sub">Soma dos concluídos</div>
+      </div>
+    </section>
+
+    <section class="ag-layout">
+      <div class="content-box">
+        <div class="box-header">
+          <h2>Calendário</h2>
+        </div>
+
+        <div class="ag-cal-semana">
+          <span>Dom</span>
+          <span>Seg</span>
+          <span>Ter</span>
+          <span>Qua</span>
+          <span>Qui</span>
+          <span>Sex</span>
+          <span>Sáb</span>
+        </div>
+
+        <div class="ag-cal-grid">
+          <span class="ag-dia vazio"></span>
+          <span class="ag-dia vazio"></span>
+          <span class="ag-dia vazio"></span>
+          <span class="ag-dia vazio"></span>
+
+          <span class="ag-dia">1</span>
+          <span class="ag-dia">2</span>
+          <span class="ag-dia">3</span>
+          <span class="ag-dia">4</span>
+          <span class="ag-dia">5</span>
+          <span class="ag-dia">6</span>
+          <span class="ag-dia">7</span>
+          <span class="ag-dia">8</span>
+          <span class="ag-dia">9</span>
+          <span class="ag-dia">10</span>
+          <span class="ag-dia">11</span>
+          <span class="ag-dia">12</span>
+          <span class="ag-dia">13</span>
+          <span class="ag-dia">14</span>
+          <span class="ag-dia">15</span>
+          <span class="ag-dia hoje">16</span>
+          <span class="ag-dia">17</span>
+          <span class="ag-dia">18</span>
+          <span class="ag-dia">19</span>
+          <span class="ag-dia">20</span>
+          <span class="ag-dia">21</span>
+          <span class="ag-dia">22</span>
+          <span class="ag-dia">23</span>
+          <span class="ag-dia">24</span>
+          <span class="ag-dia">25</span>
+          <span class="ag-dia">26</span>
+          <span class="ag-dia">27</span>
+          <span class="ag-dia">28</span>
+          <span class="ag-dia">29</span>
+          <span class="ag-dia">30</span>
+          <span class="ag-dia">31</span>
+        </div>
+
+        <p class="ag-dica">Dia de hoje destacado em azul.</p>
+      </div>
+
+      <div class="content-box">
+        <div class="box-header">
+          <h2>Lista do mês</h2>
+        </div>
+
+        <div class="empty-state">
+          <i class="fa-regular fa-calendar-xmark icon-empty-red"></i>
+          <h4>Nenhum agendamento neste mês</h4>
+          <p>
+            Quando os clientes agendarem serviços pelo AgendaUai, eles
+            aparecerão aqui.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="ag-modal" id="novo-agendamento">
+    <label
+      for="ag-toggle"
+      class="ag-modal-fundo"
+      aria-label="Fechar"></label>
+
+    <div
+      class="ag-modal-box"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-titulo">
+      <div class="ag-modal-top">
+        <h2 id="modal-titulo">Novo agendamento</h2>
+        <label
+          for="ag-toggle"
+          class="ag-modal-x"
+          aria-label="Fechar">
+          <i class="fa-solid fa-xmark"></i>
+        </label>
+      </div>
+
+      <form id="form-agendamento">
+        <label>
+          Cliente
+          <input
+            type="text"
+            name="cliente"
+            required
+            maxlength="80"
+            placeholder="Nome do cliente">
+        </label>
+
+        <label>
+          WhatsApp do cliente (com DDD)
+          <input
+            type="tel"
+            name="telefone"
+            maxlength="20"
+            placeholder="Ex.: (31) 99999-9999">
+        </label>
+
+        <label>
+          Serviço
+          <input
+            type="text"
+            name="servico"
+            required
+            maxlength="80"
+            placeholder="Ex.: Corte de cabelo">
+        </label>
+
+        <div class="ag-form-linha">
+          <label>
+            Data
+            <input type="date" name="data" required>
+          </label>
+
+          <label>
+            Hora
+            <input type="time" name="hora" required>
+          </label>
+        </div>
+
+        <label>
+          Duração do atendimento (minutos)
+          <input type="number" name="duracao" min="5" step="5" value="60" required>
+        </label>
+
+        <div class="ag-form-linha">
+          <label>
+            Valor (R$)
+            <input
+              type="number"
+              name="valor"
+              min="0"
+              step="0.01"
+              placeholder="0,00">
+          </label>
+
+          <label>
+            Status
+            <select name="status">
+              <option value="pendente">Pendente</option>
+              <option value="confirmado">Confirmado</option>
+              <option value="concluido">Concluído</option>
+              <option value="cancelado">Cancelado</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="ag-form-acoes">
+          <label
+            for="ag-toggle"
+            class="btn-action btn-red-outline ag-label-btn">
+            Cancelar
+          </label>
+          <button type="submit" class="btn-action btn-red">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="ag-modal" id="modal-disponibilidade">
+    <label
+      for="ag-disponibilidade-toggle"
+      class="ag-modal-fundo"
+      aria-label="Fechar"></label>
+
+    <div
+      class="ag-modal-box ag-disponibilidade-box"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="disponibilidade-titulo">
+      <div class="ag-modal-top">
+        <div>
+          <h2 id="disponibilidade-titulo">Horários de atendimento</h2>
+          <p class="ag-modal-ajuda">Marque os dias em que atende e adicione quantas vagas precisar. Exemplo: 14:00–16:00 e 16:00–18:00 no mesmo dia.</p>
+        </div>
+        <label
+          for="ag-disponibilidade-toggle"
+          class="ag-modal-x"
+          aria-label="Fechar">
+          <i class="fa-solid fa-xmark"></i>
+        </label>
+      </div>
+
+      <form id="form-disponibilidade">
+        <div class="ag-disponibilidade-lista" id="ag-disponibilidade-lista"></div>
+        <p class="ag-disponibilidade-msg" id="ag-disponibilidade-msg" role="status"></p>
+        <div class="ag-form-acoes">
+          <label
+            for="ag-disponibilidade-toggle"
+            class="btn-action btn-red-outline ag-label-btn">
+            Fechar
+          </label>
+          <button type="submit" class="btn-action btn-red">Salvar horários</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-bottom">
+      &copy; 2026 AgendaUai — Projeto acadêmico, curso de Análise e
+      Desenvolvimento de Sistemas, PUC Minas.
+    </div>
+  </footer>
+  <script src="../shared/agenda-uai-api.js"></script>
+  <script src="../shared/auth-guard.js"></script>
+  <script src="storage.js"></script>
+  <script src="script.js"></script>
+  <script src="agendamentos.js?v=20261104-observacao1"></script>
+</body>
+</html>

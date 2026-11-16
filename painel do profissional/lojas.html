@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minhas lojas | AgendaUai</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="forms.css">
+  <style>.page-content{width:min(1100px,100%);margin:32px auto;padding:0 24px 32px}</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/agenda-uai-theme.css">
+</head>
+<body data-page="lojas">
+  <main class="page-content">
+    <div class="page-head">
+      <div>
+        <a href="index.html" class="back-link">← Voltar ao painel</a>
+        <h1>Minhas lojas</h1>
+        <p>Escolha qual loja deseja administrar ou cadastre outra.</p>
+        <p>Para publicar, a loja precisa ter categoria, endereço completo, um serviço ativo e horários semanais.</p>
+      </div>
+      <a class="btn-action btn-red" href="../cadastrar-lojas/cadastrar-lojas.html">Cadastrar loja</a>
+    </div>
+    <section class="content-box">
+      <div class="item-list" id="lista-lojas"></div>
+      <div class="empty-state" id="lojas-vazias" hidden>
+        <h2>Nenhuma loja cadastrada</h2>
+        <p>Cadastre uma loja para começar a incluir serviços e horários.</p>
+        <a class="btn-action btn-red" href="../cadastrar-lojas/cadastrar-lojas.html">Cadastrar minha loja</a>
+      </div>
+      <p class="form-msg" id="lojas-msg" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <script src="../shared/agenda-uai-api.js"></script>
+  <script src="../shared/auth-guard.js"></script>
+  <script src="lojas.js"></script>
+</body>
+</html>

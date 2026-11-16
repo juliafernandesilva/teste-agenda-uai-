@@ -1,0 +1,7 @@
+/* Base comum; os estilos específicos de cada página permanecem em seus arquivos CSS. */
+:root{color-scheme:light dark;--agendauai-brand:#c1272d;--agendauai-text:#252525;--agendauai-muted:#667085}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0}
+img{max-width:100%}
+a{color:inherit}

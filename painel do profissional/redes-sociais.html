@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redes Sociais - AgendaUai</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="forms.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/agenda-uai-theme.css">
+</head>
+<body data-page="redes-sociais">
+
+  <!-- HEADER -->
+  <header>
+    <a href="../home/index.html" class="brand">
+      <svg class="brand-logo" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="agendaUaiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1B4A70" />
+            <stop offset="100%" stop-color="#38C184" />
+          </linearGradient>
+        </defs>
+        <rect x="12" y="22" width="76" height="68" rx="18" stroke="url(#agendaUaiGrad)" stroke-width="9" fill="none"/>
+        <rect x="30" y="10" width="8" height="18" rx="4" fill="#1B4A70"/>
+        <rect x="62" y="10" width="8" height="18" rx="4" fill="#38C184"/>
+        <path d="M50 36C42.268 36 36 42.268 36 50C36 60.5 50 74 50 74C50 74 64 60.5 64 50C64 42.268 57.732 36 50 36Z" fill="#1B4A70"/>
+        <circle cx="50" cy="48" r="7" fill="#ffffff"/>
+        <path d="M46.5 48L49 50.5L53.5 45.5" stroke="#38C184" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-text"><span class="text-blue">Agenda</span><span class="text-green">Uai</span></span>
+    </a>
+    <div class="header-actions">
+      <div class="user-pill" title="Nome da sua loja ou serviço">
+        <div class="user-avatar-small"><i class="fa-solid fa-store" aria-hidden="true"></i></div>
+        <span class="establishment-name">[Nome do seu Estabelecimento]</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <div>
+        <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Voltar ao painel</a>
+        <h1>Redes Sociais</h1>
+        <p>Adicione os canais onde seus clientes podem te encontrar.</p>
+      </div>
+    </div>
+
+    <div class="page-layout">
+      <section class="content-box" aria-labelledby="lista-titulo">
+        <div class="box-header"><h2 id="lista-titulo">Redes cadastradas</h2></div>
+        <ul class="item-list" id="lista-redes"></ul>
+        <div class="empty-state" id="redes-vazio">
+          <i class="fa-solid fa-share-nodes icon-empty-blue" aria-hidden="true"></i>
+          <h4>Nenhuma rede cadastrada ainda</h4>
+          <p>Use o formulário abaixo para adicionar a primeira.</p>
+        </div>
+      </section>
+
+      <section class="content-box form-box" aria-labelledby="form-titulo">
+        <div class="box-header"><h2 id="form-titulo">Adicionar rede social</h2></div>
+        <form id="form-rede" class="form-grid" novalidate>
+          <div class="field">
+            <label for="rede-tipo">Rede *</label>
+            <select id="rede-tipo">
+              <option value="instagram">Instagram</option>
+              <option value="whatsapp">WhatsApp</option>
+              <option value="facebook">Facebook</option>
+              <option value="tiktok">TikTok</option>
+              <option value="youtube">YouTube</option>
+              <option value="site">Site</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="rede-valor" id="rede-label">Usuário *</label>
+            <input type="text" id="rede-valor" maxlength="150" required>
+            <span class="field-hint" id="rede-dica"></span>
+          </div>
+          <p class="form-msg" id="rede-msg" role="status" aria-live="polite"></p>
+          <div class="form-actions">
+            <button type="submit" class="btn-action btn-red"><i class="fa-solid fa-plus" aria-hidden="true"></i> Adicionar rede</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3><a href="../home/index.html" aria-label="Voltar para a página inicial"><span class="text-blue-light">Agenda</span><span class="text-green-footer">Uai</span></a></h3>
+        <p>Busca e agendamento de serviços locais, do jeito mineiro.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Plataforma</h4>
+        <ul>
+          <li><a href="#">Serviços</a></li>
+          <li><a href="#">Como funciona</a></li>
+          <li><a href="#">Para estabelecimentos</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Projeto</h4>
+        <ul>
+          <li><a href="#">Políticas de Privacidade</a></li>
+          <li><a href="#">Repositório</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 AgendaUai — Projeto acadêmico, curso de Análise e Desenvolvimento de Sistemas, PUC Minas.
+    </div>
+  </footer>
+  <script src="../shared/agenda-uai-api.js"></script>
+  <script src="../shared/auth-guard.js"></script>
+  <script src="storage.js"></script>
+  <script src="script.js"></script>
+  <script src="redes-sociais.js"></script>
+</body>
+</html>

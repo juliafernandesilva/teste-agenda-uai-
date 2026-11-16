@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Configurações básicas da página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título exibido na aba do navegador -->
+    <title>Minhas Lojas | AgendaUai</title>
+
+    <!-- Conexão com o arquivo CSS -->
+    <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/agenda-uai-theme.css">
+</head>
+
+<body>
+
+<!-- =====================================
+     CABEÇALHO DO SITE
+====================================== -->
+<header class="topbar">
+
+    <div class="topbar-container">
+
+        <!-- Logo do AgendaUai -->
+        <a href="../home/index.html" class="logo">
+
+            <img
+                src="../assets/logo.jpg"
+                alt="Logo AgendaUai"
+                class="logo-img"
+            >
+
+            <span>
+                Agenda<span class="logo-uai">Uai</span>
+            </span>
+
+        </a>
+
+       
+       <a href="../painel%20do%20profissional/index.html" class="header-title">
+    Área do profissional
+</a>
+
+</div>
+
+</header>
+<!-- Fim do cabeçalho -->
+
+    <!-- =====================================
+         CONTEÚDO PRINCIPAL
+    ====================================== -->
+    <main class="container">
+
+
+        <!-- =================================
+             TELA COM LOJAS CADASTRADAS
+        ================================== -->
+        <!-- O JavaScript mostra esta seção quando
+             existe pelo menos uma loja cadastrada -->
+        <section id="stores-view" hidden>
+
+            <!-- Título da página e botão de cadastro -->
+            <div class="page-header">
+
+                <!-- Título e descrição -->
+                <div>
+                    <p class="eyebrow">
+                        Área do profissional
+                    </p>
+
+                    <h1>Minhas lojas</h1>
+
+                    <p class="subtitle">
+                        Visualize os estabelecimentos que você
+                        já cadastrou no AgendaUai.
+                    </p>
+                </div>
+
+                <!-- Botão para adicionar uma loja -->
+                <button
+                    type="button"
+                    class="btn-primary"
+                    onclick="cadastrarLoja()"
+                >
+                    + Cadastrar loja
+                </button>
+
+            </div>
+
+            <!-- O JavaScript insere os cartões neste container -->
+            <div
+                class="stores-grid"
+                id="stores-grid"
+            ></div>
+
+            <!-- Botão inferior para cadastrar mais lojas -->
+            <div class="bottom-action">
+
+                <button
+                    type="button"
+                    class="btn-primary btn-small"
+                    onclick="cadastrarLoja()"
+                >
+                    + Cadastre mais lojas
+                </button>
+
+            </div>
+
+        </section>
+        <!-- Fim da tela com lojas cadastradas -->
+
+
+        <!-- =================================
+             TELA SEM LOJAS CADASTRADAS
+        ================================== -->
+        <!-- Esta seção aparece quando a lista de lojas
+             está vazia. O mascote só aparece nesta tela. -->
+        <section
+            id="empty-view"
+            class="empty-state"
+        >
+
+            <!-- Mensagem e botão ficam à esquerda -->
+            <div class="empty-content">
+
+    
+                <!-- Mensagem principal -->
+                <h2>
+                    Ops... você ainda não possui
+                    lojas cadastradas.
+                </h2>
+
+                <!-- Texto explicativo -->
+                <p class="empty-description">
+                    Comece a utilizar a plataforma hoje mesmo!
+                    Cadastre seu primeiro estabelecimento e
+                    deixe seus clientes encontrarem você.
+                </p>
+
+                <!-- Botão para cadastrar a primeira loja -->
+                <button
+                    type="button"
+                    class="btn-primary"
+                    onclick="cadastrarLoja()"
+                >
+                    + Cadastrar minha primeira loja
+                </button>
+
+            </div>
+            <!-- Fim da mensagem -->
+
+
+            <!-- Mascote posicionado à direita -->
+            <div class="mascote-container">
+
+                <!-- Imagem do Chico sem duplicar a mensagem -->
+                <img
+                    src="../assets/chiconaopossui.png"
+                    alt="Chico, mascote do AgendaUai"
+                    class="mascote-nao-possui"
+                >
+
+            </div>
+            <!-- Fim do mascote -->
+
+        </section>
+        <!-- Fim da tela sem lojas cadastradas -->
+
+
+    </main>
+    <!-- Fim do conteúdo principal -->
+
+
+    <!-- =====================================
+         RODAPÉ DO SITE
+    ====================================== -->
+    <footer class="footer">
+
+        <p>
+            AgendaUai · Encontre serviços perto de você.
+        </p>
+
+    </footer>
+    <!-- Fim do rodapé -->
+
+
+    <!-- =====================================
+         ARQUIVO JAVASCRIPT
+    ====================================== -->
+    <!-- Controla a exibição das telas e dos cartões -->
+    <script src="script.js"></script>
+    </body>
+</html>

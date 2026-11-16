@@ -1,0 +1,566 @@
+/* =========================
+   CORES E CONFIGURAÇÕES
+========================= */
+
+:root {
+    --azul: #326B9E;
+    --verde: #5FBF87;
+    --verde-claro: #EAF8F0;
+    --verde-texto: #2F8F63;
+    --vermelho: #C1272D;
+    --cinza: #6B7370;
+    --cinza-claro: #F5F7F8;
+    --branco: #FFFFFF;
+    --borda: #E1E5E1;
+    --texto: #1F4E7A;
+    --sombra-card: 0 10px 30px rgba(36, 75, 112, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--cinza-claro);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.topbar {
+    width: 100%;
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
+}
+
+.topbar-container {
+    width: min(1120px, calc(100% - 40px));
+    min-height: 76px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Logo: imagem + nome mais próximos */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    text-decoration: none;
+    color: var(--texto);
+
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo-img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+}
+
+.logo-uai {
+    color: var(--verde);
+}
+
+/* "Área do profissional" em formato de pílula (parece menu) */
+.header-title {
+    margin: 0;
+    padding: 9px 18px;
+
+    color: var(--texto);
+    background: var(--verde-claro);
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+
+.container {
+    width: min(1120px, calc(100% - 40px));
+    margin: 38px auto 60px;
+}
+
+.page-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+
+    margin-bottom: 25px;
+}
+
+.eyebrow {
+    color: var(--verde-texto);
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-size: clamp(28px, 4vw, 36px);
+    margin-bottom: 10px;
+    letter-spacing: -0.7px;
+}
+
+.subtitle {
+    color: var(--cinza);
+    line-height: 1.6;
+    font-size: 15px;
+    max-width: 600px;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+    padding: 0 22px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: var(--vermelho);
+    color: var(--branco);
+
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+    background: #A91F24;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(200, 36, 50, 0.28);
+}
+
+.btn-primary:focus-visible {
+    outline: 3px solid var(--verde);
+    outline-offset: 3px;
+}
+
+.btn-small {
+    min-height: 38px;
+    padding: 0 17px;
+    font-size: 13px;
+}
+
+.bottom-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+
+/* =========================
+   GRADE DE LOJAS
+========================= */
+
+.stores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.store-card {
+    display: block;
+    overflow: hidden;
+
+    border: 1px solid var(--borda);
+    border-radius: 17px;
+
+    background: var(--branco);
+    color: var(--texto);
+    text-decoration: none;
+
+    box-shadow: 0 4px 15px rgba(28, 55, 78, 0.04);
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.store-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--verde);
+    box-shadow: 0 10px 25px rgba(28, 55, 78, 0.09);
+}
+
+.store-image {
+    width: 100%;
+    height: 190px;
+
+    display: block;
+    object-fit: cover;
+
+    background: #EAF0F2;
+}
+
+.store-info {
+    padding: 18px;
+}
+
+.store-name {
+    display: block;
+    margin-bottom: 9px;
+
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.store-location {
+    color: var(--cinza);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   ESTADO VAZIO (base)
+========================= */
+
+.empty-state {
+    min-height: 430px;
+    padding: 35px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 24px;
+    box-shadow: var(--sombra-card);
+
+    text-align: center;
+}
+
+.empty-content {
+    max-width: 510px;
+}
+
+.mascote {
+    display: block;
+
+    width: 200px;
+    max-width: 70%;
+    max-height: 230px;
+
+    object-fit: contain;
+
+    margin: 0 auto 20px;
+}
+
+.empty-state h2 {
+    color: var(--texto);
+    font-size: 23px;
+    line-height: 1.4;
+
+    margin-bottom: 12px;
+}
+
+.empty-state p {
+    color: var(--cinza);
+    font-size: 15px;
+    line-height: 1.7;
+
+    margin-bottom: 24px;
+}
+
+
+/* =========================
+   TELA SEM LOJAS (mensagem + mascote)
+========================= */
+
+#empty-view.empty-state {
+    position: relative;
+    overflow: hidden; /* mascote "nasce" da borda do card */
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+
+    min-height: 430px;
+    padding: 40px 50px 0;
+
+    text-align: left;
+}
+
+/* Mensagem à esquerda */
+#empty-view .empty-content {
+    flex: 1 1 58%;
+    min-width: 0;
+    max-width: 600px;
+    padding-bottom: 40px;
+}
+
+#empty-view h2 {
+    color: var(--texto);
+    font-size: clamp(24px, 3vw, 32px);
+    letter-spacing: -0.5px;
+}
+
+/* Mascote à direita, encostado na base do card */
+#empty-view .mascote-container {
+    position: relative;
+    flex: 0 1 42%;
+    min-width: 0;
+    align-self: flex-end;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/* Círculo verde água atrás do mascote */
+#empty-view .mascote-container::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 12%;
+    transform: translateX(-50%);
+
+    width: min(420px, 92%);
+    aspect-ratio: 1;
+    border-radius: 50%;
+
+    background: var(--verde-claro);
+}
+
+#empty-view .mascote-nao-possui {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* =========================
+   PASSOS (o que vem depois do clique)
+========================= */
+
+.steps {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 22px;
+
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid var(--borda);
+}
+
+.steps li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--cinza);
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+.step-num {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+    background: var(--verde-claro);
+    color: var(--verde-texto);
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.footer {
+    padding: 20px;
+
+    color: #9AA4AD;
+    font-size: 13px;
+    text-align: center;
+}
+
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 850px) {
+
+    .stores-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .store-image {
+        height: 175px;
+    }
+
+    #empty-view.empty-state {
+        gap: 20px;
+        padding: 32px 30px 0;
+    }
+
+    #empty-view .empty-content {
+        padding-bottom: 32px;
+    }
+
+    #empty-view .mascote-container {
+        flex-basis: 38%;
+    }
+
+    #empty-view .mascote-nao-possui {
+        max-width: 340px;
+    }
+}
+
+
+/* =========================
+   CELULARES
+========================= */
+
+@media (max-width: 560px) {
+
+    .topbar-container,
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .topbar-container {
+        min-height: 66px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .header-title {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+    .container {
+        margin-top: 28px;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+    }
+
+    .page-header .btn-primary {
+        width: 100%;
+    }
+
+    .stores-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .store-image {
+        height: 210px;
+    }
+
+    .empty-state {
+        min-height: 390px;
+        padding: 28px 18px;
+    }
+
+    .mascote {
+        width: 170px;
+        max-height: 190px;
+    }
+
+    .empty-state h2 {
+        font-size: 21px;
+    }
+
+    /* Tela sem lojas no celular: texto em cima, mascote na base */
+    #empty-view.empty-state {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 10px;
+        padding: 28px 20px 0;
+    }
+
+    #empty-view .empty-content {
+        flex: none;
+        width: 100%;
+        padding-bottom: 0;
+    }
+
+    #empty-view .btn-primary {
+        width: 100%;
+    }
+
+    #empty-view .mascote-container {
+        flex: none;
+        width: 100%;
+        align-self: center;
+    }
+
+    #empty-view .mascote-nao-possui {
+        max-width: 300px;
+    }
+
+    .steps {
+        flex-direction: column;
+        align-items: flex-start;
+        width: fit-content;
+        margin-inline: auto;
+        text-align: left;
+    }
+}
+
+
+/* =============================================================
+   >>> COLE AQUI, SEM ALTERAÇÕES, o bloco "CADASTRO DE LOJA —
+   AGENDAUAI" (.cadastro-loja-*) que já existe no seu arquivo,
+   caso a tela de cadastro use este mesmo style.css. <<<
+============================================================= */

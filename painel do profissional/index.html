@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgendaUai - Painel do Estabelecimento</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .user-menu {
+      position: relative;
+    }
+
+    .user-menu > summary {
+      list-style: none;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .user-menu > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .user-menu-seta {
+      font-size: .7rem;
+      margin-left: 6px;
+      transition: transform .2s;
+    }
+
+    .user-menu[open] .user-menu-seta {
+      transform: rotate(180deg);
+    }
+
+    .user-menu-lista {
+      position: absolute;
+      right: 0;
+      top: calc(100% + 8px);
+      min-width: 230px;
+      background: #fff;
+      border: 1px solid #e3e8ee;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(15, 30, 45, .15);
+      padding: 6px;
+      z-index: 100;
+    }
+
+    .user-menu-lista a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: #1B4A70;
+      font-weight: 600;
+      font-size: .9rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .user-menu-lista a:hover {
+      background: #eef7f2;
+    }
+
+    .user-menu-lista a i {
+      width: 16px;
+      text-align: center;
+      color: #38C184;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/agenda-uai-theme.css">
+</head>
+
+<body data-page="home">
+  <header>
+    <a href="../home/index.html" class="brand">
+      <svg
+        class="brand-logo"
+        viewBox="0 0 100 100"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient
+            id="agendaUaiGrad"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%">
+            <stop offset="0%" stop-color="#1B4A70" />
+            <stop offset="100%" stop-color="#38C184" />
+          </linearGradient>
+        </defs>
+
+        <rect
+          x="12"
+          y="22"
+          width="76"
+          height="68"
+          rx="18"
+          stroke="url(#agendaUaiGrad)"
+          stroke-width="9"
+          fill="none" />
+        <rect
+          x="30"
+          y="10"
+          width="8"
+          height="18"
+          rx="4"
+          fill="#1B4A70" />
+        <rect
+          x="62"
+          y="10"
+          width="8"
+          height="18"
+          rx="4"
+          fill="#38C184" />
+        <path
+          d="M50 36C42.268 36 36 42.268 36 50
+             C36 60.5 50 74 50 74
+             C50 74 64 60.5 64 50
+             C64 42.268 57.732 36 50 36Z"
+          fill="#1B4A70" />
+        <circle cx="50" cy="48" r="7" fill="#ffffff" />
+        <path
+          d="M46.5 48L49 50.5L53.5 45.5"
+          stroke="#38C184"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+
+      <span class="brand-text">
+        <span class="text-blue">Agenda</span><span class="text-green">Uai</span>
+      </span>
+    </a>
+
+    <div class="header-actions">
+      <a
+        href="https://calendar.google.com/calendar/u/0/r/month"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="cadastro-loja-btn-secundario">
+        Agendamentos
+      </a>
+
+      <a
+        href="perfil.html"
+        class="user-pill"
+        title="Editar perfil do estabelecimento"
+        aria-label="Editar perfil do estabelecimento">
+        <div class="user-avatar-small">
+          <i class="fa-solid fa-store"></i>
+        </div>
+        <span>Meu Perfil</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="profile-hero">
+      <div class="avatar-wrapper">
+        <button
+          type="button"
+          class="avatar-placeholder"
+          id="avatar-button"
+          title="Clique para enviar sua foto"
+          aria-label="Enviar foto do estabelecimento">
+          <i class="fa-solid fa-camera"></i>
+          <span>Enviar Foto</span>
+        </button>
+
+        <input
+          type="file"
+          id="file-input"
+          accept="image/*"
+          style="display: none;">
+      </div>
+
+      <div class="profile-info">
+        <h1 id="establishment-title">[Nome do seu Estabelecimento]</h1>
+        <p id="establishment-description">
+          Complete as informações do seu perfil para começar a receber
+          agendamentos.
+        </p>
+
+        <div class="status-badge" id="status-badge">
+          <span class="status-dot"></span>
+          <span id="status-text">Status: Não configurado</span>
+        </div>
+      </div>
+    </section>
+
+    <nav class="nav-grid" aria-label="Atalhos do painel">
+      <a
+        href="lojas.html"
+        class="nav-card"
+        data-nav="lojas">
+        <i class="fa-solid fa-store icon-blue" aria-hidden="true"></i>
+        <span>Lojas</span>
+      </a>
+
+      <a href="servicos.html" class="nav-card" data-nav="servicos">
+        <i class="fa-solid fa-scissors icon-red" aria-hidden="true"></i>
+        <span>Meus Serviços</span>
+      </a>
+
+      <a
+        href="agendamentos.html"
+        class="nav-card"
+        data-nav="agendamentos">
+        <i
+          class="fa-solid fa-calendar-days icon-green"
+          aria-hidden="true"></i>
+        <span>Agendamentos do Mês</span>
+      </a>
+
+      <a
+        href="redes-sociais.html"
+        class="nav-card"
+        data-nav="redes-sociais">
+        <i class="fa-solid fa-share-nodes icon-blue" aria-hidden="true"></i>
+        <span>Redes Sociais</span>
+      </a>
+    </nav>
+
+    <section class="metrics-grid">
+      <div class="metric-card">
+        <h3>Lojas</h3>
+        <div class="metric-value" id="home-total-lojas">0</div>
+        <div class="metric-sub">Cadastradas na sua conta</div>
+      </div>
+
+      <div class="metric-card">
+        <h3>Serviços ativos</h3>
+        <div class="metric-value" id="home-servicos-ativos">0</div>
+        <div class="metric-sub">Disponíveis para agendamento</div>
+      </div>
+
+      <div class="metric-card">
+        <h3>Agendamentos do mês</h3>
+        <div class="metric-value" id="home-agendamentos-mes">0</div>
+        <div class="metric-sub">Solicitações para este mês</div>
+      </div>
+
+      <div class="metric-card">
+        <h3>Faturamento do mês</h3>
+        <div class="metric-value" id="home-faturamento">R$ 0,00</div>
+        <div class="metric-sub">Pagamentos aprovados</div>
+      </div>
+
+      <div class="metric-card">
+        <h3>Novos clientes</h3>
+        <div class="metric-value" id="home-novos-clientes">0</div>
+        <div class="metric-sub">Primeiro agendamento neste mês</div>
+      </div>
+
+      <div class="metric-card">
+        <h3>Ocupação</h3>
+        <div class="metric-value" id="home-ocupacao">0%</div>
+        <div class="metric-sub">Horários ocupados neste mês</div>
+      </div>
+    </section>
+
+    <section class="dashboard-layout">
+      <div class="content-box">
+        <div class="box-header">
+          <h2>Lista de Agendamentos Recentes</h2>
+          <span id="home-pedidos-pendentes" class="home-pedidos-badge" aria-live="polite" hidden></span>
+          <a href="agendamentos.html" class="back-link">Ver agenda</a>
+        </div>
+
+        <div class="item-list" id="home-agendamentos"></div>
+        <p class="home-agendamentos-erro" id="home-agendamentos-erro" role="alert" hidden></p>
+        <div class="empty-state" id="home-agendamentos-vazio">
+          <i class="fa-regular fa-calendar-xmark icon-empty-red"></i>
+          <h4>Nenhum próximo atendimento</h4>
+          <p>
+            Os próximos pedidos feitos pelos clientes aparecerão aqui.
+          </p>
+          <a href="agendamentos.html" class="btn-action btn-red-outline">
+            Organizar agenda
+          </a>
+        </div>
+      </div>
+
+      <div class="content-box">
+        <div class="box-header">
+          <h2>Minha disponibilidade</h2>
+        </div>
+
+        <div class="item-list" id="home-disponibilidade"></div>
+        <div class="empty-state" id="home-disponibilidade-vazia">
+          <i class="fa-regular fa-clock icon-empty-blue"></i>
+          <h4>Horários ainda não configurados</h4>
+          <p>
+            Configure os dias e as vagas em que você atende.
+          </p>
+          <a href="agendamentos.html" class="btn-action btn-red-outline">Configurar horários</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>
+          <a href="../home/index.html" aria-label="Voltar para a página inicial">
+            <span class="text-blue-light">Agenda</span>
+            <span class="text-green-footer">Uai</span>
+          </a>
+        </h3>
+        <p>Busca e agendamento de serviços locais, do jeito mineiro.</p>
+      </div>
+
+      <div class="footer-column">
+        <h4>Plataforma</h4>
+        <ul>
+          <li><a href="#">Serviços</a></li>
+          <li><a href="#">Como funciona</a></li>
+          <li><a href="#">Para estabelecimentos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Projeto</h4>
+        <ul>
+          <li><a href="#">Políticas de Privacidade</a></li>
+          <li><a href="#">Repositório</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 AgendaUai — Projeto acadêmico, curso de Análise e
+      Desenvolvimento de Sistemas, PUC Minas.
+    </div>
+  </footer>
+  <script src="../shared/agenda-uai-api.js"></script>
+  <script src="../shared/auth-guard.js"></script>
+  <script src="storage.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
