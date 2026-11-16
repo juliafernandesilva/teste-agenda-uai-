@@ -1,0 +1,948 @@
+/* =========================================================
+   CADASTRO DE LOJA — AGENDAUAI
+   Visual completo, na identidade da Home.
+   Este arquivo SUBSTITUI o cadastrar-lojas.css inteiro.
+   A estrutura do HTML e o JavaScript continuam iguais.
+========================================================= */
+
+
+/* =========================
+   1. CORES E BASE
+========================= */
+
+.cadastro-loja-page {
+    --azul: #1F4E7A;
+    --azul-marca: #326B9E;
+    --verde: #5FBF87;
+    --verde-texto: #2F8F63;
+    --verde-claro: #EAF8F0;
+    --verde-medio: #DDF3E7;
+    --vermelho: #C1272D;
+    --vermelho-hover: #A91F24;
+    --cinza: #6B7370;
+    --cinza-escuro: #5F6B77;
+    --cinza-claro: #F5F7F8;
+    --borda: #E1E5E1;
+    --borda-campo: #D5DEE6;
+    --branco: #FFFFFF;
+    --sombra: 0 10px 30px rgb(36 75 112 / 8%);
+
+    margin: 0;
+    min-height: 100vh;
+    background: var(--cinza-claro);
+    color: var(--azul);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.cadastro-loja-page *,
+.cadastro-loja-page *::before,
+.cadastro-loja-page *::after {
+    box-sizing: border-box;
+}
+
+.cadastro-loja-page [hidden] {
+    display: none !important;
+}
+
+.cadastro-loja-page button,
+.cadastro-loja-page input,
+.cadastro-loja-page textarea {
+    font: inherit;
+}
+
+
+/* =========================
+   2. TOPO COM A LOGO
+========================= */
+
+.cadastro-loja-topbar {
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
+}
+
+.cadastro-loja-topbar__conteudo {
+    width: min(1120px, calc(100% - 32px));
+    min-height: 72px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.cadastro-loja-logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: var(--azul);
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.cadastro-loja-logo img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+}
+
+.cadastro-loja-logo__uai {
+    color: var(--verde);
+}
+
+.cadastro-loja-topbar__pill {
+    padding: 9px 18px;
+
+    color: var(--azul);
+    background: var(--verde-claro);
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+
+/* =========================
+   3. TÍTULO DA PÁGINA
+========================= */
+
+.cadastro-loja-header {
+    padding: 28px 16px 0;
+    background: transparent;
+    color: var(--azul);
+}
+
+.cadastro-loja-header > * {
+    width: min(100%, 900px);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Botão "Voltar" em pílula */
+.cadastro-loja-header > .cadastro-loja-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    width: fit-content;
+    margin-left: max(0px, calc((100% - 900px) / 2));
+    margin-right: auto;
+    margin-bottom: 18px;
+    padding: 8px 16px;
+
+    color: var(--azul);
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.cadastro-loja-header > .cadastro-loja-voltar:hover {
+    background: var(--verde-claro);
+    border-color: var(--verde);
+    transform: translateX(-3px);
+}
+
+.cadastro-loja-header h1 {
+    margin-top: 0;
+    margin-bottom: 8px;
+
+    font-size: clamp(26px, 4.5vw, 34px);
+    letter-spacing: -0.6px;
+    line-height: 1.2;
+}
+
+/* Barrinha verde sob o título */
+.cadastro-loja-header h1::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 4px;
+    margin-top: 12px;
+    border-radius: 4px;
+    background: var(--verde);
+}
+
+.cadastro-loja-header p {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    color: var(--cinza-escuro);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   4. CONTAINER E CARTÕES
+========================= */
+
+.cadastro-loja-container {
+    width: min(100% - 32px, 900px);
+    margin: 24px auto 56px;
+}
+
+.cadastro-loja-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    counter-reset: secao; /* numeração automática das seções */
+}
+
+.cadastro-loja-card {
+    min-width: 0;
+    padding: 28px;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+}
+
+.cadastro-loja-section-title {
+    margin-bottom: 22px;
+}
+
+/* Título da seção com número em círculo (1, 2, 3, 4) */
+.cadastro-loja-section-title h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0 0 8px;
+
+    color: var(--azul);
+    font-size: 21px;
+    line-height: 1.3;
+}
+
+.cadastro-loja-section-title h2::before {
+    counter-increment: secao;
+    content: counter(secao);
+
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--verde-texto);
+    background: var(--verde-claro);
+    border-radius: 50%;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.cadastro-loja-section-title p {
+    margin: 0 0 0 42px; /* alinha com o texto do título */
+
+    color: var(--cinza);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   5. FOTO DA LOJA
+========================= */
+
+.cadastro-loja-foto-preview {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: 100%;
+    min-height: 230px;
+    padding: 20px;
+    overflow: hidden;
+
+    background-color: var(--verde-claro);
+    background-position: center;
+    background-size: cover;
+    border: 2px dashed var(--verde);
+    border-radius: 16px;
+
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.cadastro-loja-foto-preview:hover {
+    background-color: var(--verde-medio);
+    border-color: var(--verde-texto);
+}
+
+/* Se o JavaScript colocar a foto escolhida como <img> */
+.cadastro-loja-foto-preview img {
+    width: 100%;
+    height: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.foto-loja-placeholder {
+    width: 60px;
+    height: 60px;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--verde-texto);
+    background: var(--branco);
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgb(47 143 99 / 18%);
+
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.foto-loja-placeholder-text {
+    color: var(--verde-texto);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.cadastro-loja-ajuda {
+    margin: 10px 0 0;
+
+    color: var(--cinza);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   6. CAMPOS DE TEXTO
+========================= */
+
+.cadastro-loja-label {
+    display: block;
+    margin-bottom: 9px;
+
+    color: var(--azul);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.cadastro-loja-textarea,
+.cadastro-loja-input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 13px 15px;
+
+    color: #1F4E7A;
+    background: var(--branco);
+    border: 1px solid var(--borda-campo);
+    border-radius: 12px;
+    outline: none;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.cadastro-loja-textarea {
+    min-height: 135px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.cadastro-loja-textarea:focus,
+.cadastro-loja-input:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 4px rgb(112 207 155 / 25%);
+}
+
+.cadastro-loja-textarea::placeholder,
+.cadastro-loja-input::placeholder {
+    color: #9AA6B0;
+}
+
+.cadastro-loja-contador {
+    margin-top: 8px;
+
+    color: var(--cinza);
+    font-size: 12px;
+    text-align: right;
+}
+
+
+/* =========================
+   7. PÚBLICO-ALVO
+========================= */
+
+.cadastro-loja-publicos-selecionados {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.cadastro-loja-publicos-selecionados:empty {
+    display: none;
+}
+
+.cadastro-loja-publico-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    max-width: 100%;
+    padding: 9px 14px;
+
+    color: #1F6F49;
+    background: var(--verde-claro);
+    border: 1px solid #C9ECD8;
+    border-radius: 999px;
+
+    font-size: 13px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.cadastro-loja-remover-publico {
+    padding: 0;
+
+    color: #1F6F49;
+    background: transparent;
+    border: none;
+
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.cadastro-loja-remover-publico:hover {
+    color: var(--vermelho);
+}
+
+.cadastro-loja-adicionar-publico {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-height: 48px;
+    padding: 10px 20px;
+
+    color: var(--azul);
+    background: var(--branco);
+    border: 1px dashed var(--verde);
+    border-radius: 14px;
+
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.cadastro-loja-adicionar-publico:hover {
+    background: var(--verde-claro);
+    border-color: var(--verde-texto);
+}
+
+.cadastro-loja-adicionar-publico > span:first-child {
+    color: var(--verde-texto);
+    font-size: 24px;
+    line-height: 1;
+}
+
+
+/* =========================
+   8. SERVIÇOS
+========================= */
+
+.cadastro-loja-servicos-lista {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.cadastro-loja-sem-servicos {
+    grid-column: 1 / -1;
+    margin: 0;
+    padding: 18px;
+
+    color: var(--cinza);
+    background: var(--cinza-claro);
+    border: 1px dashed var(--borda-campo);
+    border-radius: 14px;
+
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.cadastro-loja-servico-card {
+    min-width: 0;
+    padding: 16px 18px;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-left: 4px solid var(--verde);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgb(36 75 112 / 5%);
+
+    overflow-wrap: anywhere;
+}
+
+.cadastro-loja-servico-card h3 {
+    margin: 0 0 10px;
+
+    color: var(--azul);
+    font-size: 15px;
+}
+
+.cadastro-loja-servico-detalhes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+
+    color: var(--cinza-escuro);
+    font-size: 13px;
+}
+
+.cadastro-loja-remover-servico {
+    margin-top: 13px;
+    padding: 0;
+
+    color: var(--vermelho);
+    background: transparent;
+    border: none;
+
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cadastro-loja-remover-servico:hover {
+    text-decoration: underline;
+}
+
+/* Formulário para adicionar um serviço */
+.cadastro-loja-form-servico {
+    margin-top: 18px;
+    padding: 22px;
+
+    background: var(--cinza-claro);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+}
+
+.cadastro-loja-form-servico h3 {
+    margin: 0 0 20px;
+
+    color: var(--azul);
+    font-size: 17px;
+}
+
+.cadastro-loja-servico-campos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.cadastro-loja-acoes-servico {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+
+/* =========================
+   9. BOTÕES (vermelho = ação)
+========================= */
+
+.cadastro-loja-btn-principal,
+.cadastro-loja-btn-secundario,
+.cadastro-loja-btn-cancelar,
+.cadastro-loja-btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+    padding: 12px 26px;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+/* Principal: vermelho, como na Home */
+.cadastro-loja-btn-principal {
+    color: var(--branco);
+    background: var(--vermelho);
+    border: 1px solid var(--vermelho);
+}
+
+.cadastro-loja-btn-principal:hover {
+    background: var(--vermelho-hover);
+    border-color: var(--vermelho-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgb(200 36 50 / 28%);
+}
+
+/* Secundário: contorno azul, fica verde no hover */
+.cadastro-loja-btn-secundario {
+    color: var(--azul);
+    background: var(--branco);
+    border: 1px solid var(--borda-campo);
+}
+
+.cadastro-loja-btn-secundario:hover {
+    background: var(--verde-claro);
+    border-color: var(--verde);
+}
+
+/* Cancelar / voltar: neutros */
+.cadastro-loja-btn-cancelar,
+.cadastro-loja-btn-voltar {
+    color: var(--cinza-escuro);
+    background: var(--branco);
+    border: 1px solid var(--borda-campo);
+}
+
+.cadastro-loja-btn-cancelar:hover,
+.cadastro-loja-btn-voltar:hover {
+    background: var(--cinza-claro);
+}
+
+/* Barra com os botões finais */
+.cadastro-loja-acoes-finais {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    padding: 18px 22px;
+
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+}
+
+.cadastro-loja-mensagem {
+    margin: 0;
+    padding: 12px 16px;
+
+    color: var(--verde-texto);
+    background: var(--verde-claro);
+    border-radius: 12px;
+
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.cadastro-loja-mensagem:empty {
+    display: none;
+}
+
+
+/* =========================
+   10. POPUP DO PÚBLICO-ALVO
+========================= */
+
+.cadastro-loja-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 18px;
+    background: rgb(36 75 112 / 45%);
+}
+
+.cadastro-loja-modal-conteudo {
+    width: min(100%, 600px);
+    max-height: min(85vh, 760px);
+    padding: 26px;
+    overflow-y: auto;
+
+    background: var(--branco);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgb(0 0 0 / 20%);
+}
+
+.cadastro-loja-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.cadastro-loja-modal-header h2 {
+    margin: 0 0 7px;
+
+    color: var(--azul);
+    font-size: 22px;
+}
+
+.cadastro-loja-modal-header p {
+    margin: 0;
+
+    color: var(--cinza);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.cadastro-loja-modal-fechar {
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+
+    color: var(--cinza-escuro);
+    background: var(--cinza-claro);
+    border: none;
+    border-radius: 50%;
+
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.cadastro-loja-modal-fechar:hover {
+    background: var(--verde-claro);
+}
+
+.cadastro-loja-selecao-contador {
+    display: inline-block;
+    margin: 20px 0 14px;
+    padding: 6px 14px;
+
+    color: var(--verde-texto);
+    background: var(--verde-claro);
+    border-radius: 999px;
+
+    font-size: 13px;
+}
+
+.cadastro-loja-opcoes-publico {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.cadastro-loja-opcao-publico {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    min-width: 0;
+    padding: 13px 14px;
+
+    color: var(--azul);
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+
+    font-size: 13px;
+    line-height: 1.5;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.cadastro-loja-opcao-publico:hover {
+    border-color: var(--verde);
+}
+
+.cadastro-loja-opcao-publico:has(input:checked) {
+    background: var(--verde-claro);
+    border-color: var(--verde);
+}
+
+.cadastro-loja-opcao-publico input {
+    flex-shrink: 0;
+    margin-top: 3px;
+    accent-color: var(--verde-texto);
+}
+
+.cadastro-loja-erro-publico {
+    min-height: 18px;
+    margin: 12px 0 0;
+
+    color: var(--vermelho);
+    font-size: 13px;
+}
+
+.cadastro-loja-modal-acoes {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 16px;
+    padding-top: 18px;
+    border-top: 1px solid var(--borda);
+}
+
+
+/* =========================
+   11. ACESSIBILIDADE (foco)
+========================= */
+
+.cadastro-loja-page button:focus-visible,
+.cadastro-loja-page a:focus-visible,
+.cadastro-loja-page input:focus-visible,
+.cadastro-loja-page textarea:focus-visible,
+.cadastro-loja-foto-preview:focus-visible {
+    outline: 3px solid var(--verde);
+    outline-offset: 3px;
+}
+
+
+/* =========================
+   12. TABLETS E CELULARES
+========================= */
+
+@media (max-width: 600px) {
+
+    .cadastro-loja-topbar__conteudo {
+        min-height: 62px;
+    }
+
+    .cadastro-loja-logo {
+        font-size: 19px;
+    }
+
+    .cadastro-loja-logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .cadastro-loja-topbar__pill {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+    .cadastro-loja-header {
+        padding: 22px 12px 0;
+    }
+
+    .cadastro-loja-container {
+        width: calc(100% - 24px);
+        margin-top: 20px;
+    }
+
+    .cadastro-loja-card {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .cadastro-loja-section-title p {
+        margin-left: 0;
+    }
+
+    .cadastro-loja-foto-preview {
+        min-height: 190px;
+    }
+
+    .cadastro-loja-servicos-lista,
+    .cadastro-loja-servico-campos,
+    .cadastro-loja-opcoes-publico {
+        grid-template-columns: 1fr;
+    }
+
+    .cadastro-loja-acoes-finais {
+        flex-direction: column-reverse;
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .cadastro-loja-acoes-finais > *,
+    .cadastro-loja-modal-acoes > * {
+        width: 100%;
+    }
+
+    .cadastro-loja-modal-conteudo {
+        padding: 20px;
+    }
+}
+
+
+/* =========================
+   13. FOTO ESCOLHIDA, CONTADOR NO LIMITE E ERROS
+========================= */
+
+/* Foto escolhida ocupa todo o bloco */
+.cadastro-loja-foto-preview.tem-foto {
+    padding: 0;
+    border-style: solid;
+    border-color: var(--verde);
+    background: var(--branco);
+}
+
+.cadastro-loja-foto-preview.tem-foto img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    max-height: none;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+/* Aviso "Clique para trocar" sobre a foto */
+.foto-loja-troca {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    padding: 8px 14px;
+
+    color: var(--azul);
+    background: rgb(255 255 255 / 92%);
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgb(36 75 112 / 18%);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Contador de caracteres perto do limite / no limite */
+.cadastro-loja-contador.perto {
+    color: #B7791F;
+}
+
+.cadastro-loja-contador.limite {
+    color: var(--vermelho);
+    font-weight: bold;
+}
+
+/* Mensagem geral em caso de erro */
+.cadastro-loja-mensagem.erro {
+    color: var(--vermelho);
+    background: #FDECEE;
+}
+
+@media (max-width: 600px) {
+    .cadastro-loja-foto-preview.tem-foto img {
+        height: 240px;
+    }
+}

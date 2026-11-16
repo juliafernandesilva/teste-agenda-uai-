@@ -1,0 +1,73 @@
+.agenda-horarios-gerados {
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:8px 0 18px;
+}
+.agenda-horarios-mensagem {
+    flex-basis:100%;
+    margin:0;
+    color:#6B7370;
+    font-size:13px;
+}
+.agenda-status-cliente {
+    font-weight:700;
+    color:#1F4E7A;
+}
+.agenda-calendario {
+    margin:10px 0 20px;
+    padding:16px;
+    border:1px solid #E1E5E1;
+    border-radius:14px;
+    background:#fff
+}
+.agenda-calendario-cabecalho {
+    display:grid;
+    grid-template-columns:40px 1fr 40px;
+    align-items:center;
+    gap:8px;
+    margin-bottom:12px;
+    text-align:center;
+    color:#1F4E7A;
+    text-transform:capitalize
+}
+.agenda-calendario-nav,.agenda-calendario-dia {
+    min-width:38px;
+    min-height:38px;
+    border:1px solid #E1E5E1;
+    border-radius:10px;
+    background:#fff;
+    color:#1F4E7A;
+    font:inherit
+}
+.agenda-calendario-nav {font-size:22px;cursor:pointer}
+.agenda-calendario-nav:disabled {opacity:.4;cursor:not-allowed}
+.agenda-calendario-semana,.agenda-calendario-grade {
+    display:grid;
+    grid-template-columns:repeat(7,minmax(0,1fr));
+    gap:6px;
+    text-align:center
+}
+.agenda-calendario-semana {margin-bottom:6px;color:#6B7370;font-size:12px;font-weight:700}
+.agenda-calendario-semana span {padding:6px 0}
+.agenda-calendario-dia {cursor:pointer}
+.agenda-calendario-dia:disabled {opacity:.38;background:#F6F7F5;color:#6B7370;cursor:not-allowed}
+.agenda-calendario-dia.disponivel {border-color:#5FBF87;background:#EAF8F1;font-weight:700}
+.agenda-calendario-dia.disponivel:hover,.agenda-calendario-dia.selecionado {background:#1F4E7A;border-color:#1F4E7A;color:#fff}
+.agenda-calendario-dia.hoje {box-shadow:inset 0 0 0 2px #1F4E7A}
+.agenda-calendario-vazio {min-height:38px}
+.agenda-calendario-mensagem {margin:12px 0 0;color:#6B7370;font-size:12px;line-height:1.5}
+@media(max-width:520px) {
+    .agenda-calendario {padding:12px}
+    .agenda-calendario-semana,.agenda-calendario-grade {gap:4px}
+    .agenda-calendario-dia {min-width:0;min-height:36px;padding:0}
+}
+
+/* Lista de serviços no fluxo de reserva, no padrão de catálogo do AgendaUai. */
+.lista-servicos-reserva { margin:18px 0 6px; border-top:1px solid #E1E5E1; }
+.servico-reserva-linha { display:grid; grid-template-columns:minmax(0,1fr) 110px 100px; align-items:center; gap:18px; padding:18px 4px; border-bottom:1px solid #E1E5E1; }
+.servico-reserva-info h3 { margin:0 0 5px; color:#24292B; font-size:16px; font-weight:600; }
+.servico-reserva-info p { margin:0; color:#6B7370; font-size:13px; }
+.servico-reserva-preco { text-align:right; white-space:nowrap; }
+.servico-reserva-botao { min-height:38px; padding:8px 17px; }
+@media(max-width:520px) { .servico-reserva-linha { grid-template-columns:minmax(0,1fr) auto; gap:10px; }.servico-reserva-preco { grid-column:2; grid-row:1; }.servico-reserva-botao { grid-column:1/-1; width:100%; } }

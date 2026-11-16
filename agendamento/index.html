@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgendaUai</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="agenda-uai-disponibilidade.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/agenda-uai-theme.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <a href="../home/index.html" class="logo-container" aria-label="Voltar para a página inicial">
+            <img src="" alt="" id="minha-logo" class="logo-img" style="display: none;">
+            <span class="logo-texto" id="texto-logo"><span class="logo-inicial">Agenda</span><span class="logo-final">Uai</span></span>
+        </a>
+        <div class="agendamento-cabecalho-acoes">
+            <a class="btn-acao btn-acao--compacto" href="../home/index.html#lojas-publicadas">
+                Voltar ao feed
+            </a>
+            <button class="btn-acao btn-acao--compacto" onclick="mudarTela('tela-servicos')">
+                + Novo Agendamento
+            </button>
+        </div>
+    </header>
+
+    <div class="banner">
+        <h2 id="agendamento-nome-loja">Agendamento</h2>
+        <p id="agendamento-descricao">Escolha um serviço e encontre um horário disponível.</p>
+    </div>
+
+    <nav>
+        <button id="tab-home" class="btn-tab ativa" onclick="mudarTela('tela-servicos')">Novo Agendamento</button>
+        <button id="tab-lista" class="btn-tab" onclick="mudarTela('tela-meus-agendamentos')">Meus Agendamentos</button>
+    </nav>
+
+    <div class="container">
+        
+        <!-- TELA 2: ESCOLHER DATA E HORÁRIO -->
+        <div id="tela-home" class="card">
+            <h2>2. Escolha data e horário</h2>
+            <p>Selecione um dia disponível e depois um horário para o serviço escolhido.</p>
+            
+            <label for="input-data">Data do Agendamento</label>
+            <input type="date" id="input-data">
+
+            <label>Horários Disponíveis </label>
+            <div id="lista-horarios" class="grid-horarios"></div>
+
+            <p id="mensagem-erro" class="agendamento-mensagem-erro" role="status"></p>
+            <button class="btn-acao btn-acao--largura-total" onclick="irParaConfirmacao()" disabled>Continuar</button>
+            <button class="btn-secundario" onclick="mudarTela('tela-servicos')">Voltar aos serviços</button>
+        </div>
+
+        <!-- TELA 1: ESCOLHER SERVIÇO -->
+        <div id="tela-servicos" class="card">
+            <h2>1. Escolha um serviço</h2>
+            <p>Confira os serviços oferecidos por este estabelecimento.</p>
+
+            <div id="lista-servicos-reserva" class="lista-servicos-reserva" aria-live="polite"></div>
+            <label for="select-servico" hidden>Serviço selecionado</label>
+            <select id="select-servico" hidden>
+                <!-- As opções serão inseridas pelo JavaScript -->
+            </select>
+
+            <p id="servicos-mensagem" class="agendamento-mensagem-status" role="status">Carregando serviços…</p>
+        </div>
+
+        <!-- TELA 3: CONFIRMAR AGENDAMENTO (COM NOVO RESUMO) -->
+        <div id="tela-confirmacao" class="card">
+            <h2>Passo 3: Confirmar Agendamento</h2>
+            <p>Verifique o serviço. Para enviar o pedido, entre na sua conta AgendaUai; a loja precisa confirmar o horário.</p>
+            
+            <div class="resumo-agendamento">
+                <p class="resumo-agendamento__linha"><strong>📅 Data:</strong> <span id="resumo-data"></span></p>
+                <p class="resumo-agendamento__linha"><strong>⏰ Horário:</strong> <span id="resumo-horario"></span></p>
+                <hr>
+                <p class="resumo-agendamento__linha"><strong>✂️ Serviço:</strong> <span id="resumo-servico"></span></p>
+                <p class="resumo-agendamento__valor">💰 Preço: R$ <span id="resumo-preco"></span></p>
+            </div>
+
+            <label for="input-observacao">Observação para o profissional (opcional)</label>
+            <textarea id="input-observacao" rows="3" placeholder="Ex: Vou atrasar 5 minutos..."></textarea>
+
+            <label for="select-lembrete">Lembrete de Agendamento</label>
+            <select id="select-lembrete"></select>
+
+            <button class="btn-acao btn-acao--largura-total" onclick="finalizarAgendamento()">Confirmar Agendamento</button>
+            <button class="btn-secundario" onclick="mudarTela('tela-servicos')">Voltar aos Serviços</button>
+        </div>
+
+        <!-- TELA 4: MEUS AGENDAMENTOS -->
+        <div id="tela-meus-agendamentos" class="card">
+            <h2>Lista de Agendamentos</h2>
+            
+            <div id="lista-meus-agendamentos" class="lista-meus-agendamentos">
+                <p class="lista-meus-agendamentos__vazio">Nenhum agendamento cadastrado ainda.<br>Use o formulário para adicionar o primeiro.</p>
+            </div>
+        </div>
+
+    </div>
+    <script src="../shared/agenda-uai-api.js"></script>
+    <script src="script.js"></script>
+    <script src="agenda-uai-disponibilidade.js"></script>
+</body>
+</html>

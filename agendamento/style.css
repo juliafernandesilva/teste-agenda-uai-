@@ -1,0 +1,324 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+body {
+    background-color: #F6F7F5;
+    color: #333333;
+}
+
+/* BARRA SUPERIOR */
+.topbar {
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-texto {
+    font-size: 20px;
+    font-weight: 700;
+    color: #24292B;
+}
+
+.logo-texto .logo-inicial {
+    color: #2D6CA3;
+}
+
+.logo-texto .logo-final {
+    color: #5FBF87;
+}
+
+/* PAINEL AZUL ESCURO */
+.banner {
+    background-color: #1F4E7A;
+    color: #FFFFFF;
+    margin: 20px 30px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.banner h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+}
+
+.banner p {
+    color: #9CA3AF;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* MENU DE NAVEGAÇÃO */
+nav {
+    margin: 0 30px 20px 30px;
+    display: flex;
+    gap: 10px;
+    border-bottom: 2px solid #E1E5E1;
+    padding-bottom: 5px;
+}
+
+.btn-tab {
+    background-color: transparent;
+    color: #6B7370;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -7px;
+}
+
+.btn-tab:hover {
+    color: #1F4E7A;
+}
+
+.btn-tab.ativa {
+    color: #C1272D;
+    border-bottom: 3px solid #C1272D;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 30px 40px 30px;
+}
+
+/* ESTILO DOS CARDS */
+.card {
+    background-color: #FFFFFF;
+    border: 1px solid #E1E5E1;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.card h2 {
+    margin-bottom: 8px;
+    color: #24292B;
+    font-size: 20px;
+}
+
+.card > p {
+    color: #6B7370;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+label {
+    color: #4F5955;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: block;
+    margin-top: 20px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #E1E5E1;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #24292B;
+    background-color: #F6F7F5;
+    transition: all 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #10B981;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* GRID DE HORÁRIOS */
+.grid-horarios {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.btn-horario {
+    padding: 12px 15px;
+    background-color: #FFFFFF;
+    border: 1px solid #E1E5E1;
+    color: #4F5955;
+    border-radius: 8px;
+    cursor: pointer;
+    width: calc(25% - 9px);
+    text-align: center;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.btn-horario:hover {
+    border-color: #1F4E7A;
+    color: #1F4E7A;
+    background-color: #F6F7F5;
+}
+
+.btn-horario-selecionado {
+    background-color: #1F4E7A !important;
+    border-color: #1F4E7A !important;
+    color: #FFFFFF !important;
+}
+
+/* BOTÕES DE AÇÃO */
+.btn-acao {
+    background-color: #C1272D; 
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 24px;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+
+.btn-acao:hover {
+    background-color: #A91F24;
+}
+
+a.btn-acao {
+    text-decoration: none;
+}
+
+.btn-secundario {
+    background-color: #FFFFFF;
+    color: #4F5955;
+    border: 1px solid #E1E5E1;
+    padding: 14px 24px;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-secundario:hover {
+    background-color: #F6F7F5;
+}
+
+/* LISTA DE AGENDAMENTOS */
+.item-agendamento {
+    border: 1px solid #E1E5E1;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.item-agendamento h4 {
+    color: #24292B;
+}
+/* Elementos do resumo e navegação padronizados com a identidade da home. */
+.agendamento-cabecalho-acoes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-acao--compacto {
+    padding: 10px 16px;
+}
+
+.btn-acao--largura-total {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.agendamento-mensagem-erro {
+    display: none;
+    margin: 10px 0 15px;
+    color: var(--vermelho-destaque);
+    font-size: 14px;
+}
+.agendamento-mensagem-status {
+    margin: 12px 0 0;
+    color: #6B7370;
+    font-size: 14px;
+}
+.agendamento-mensagem-status[hidden] {
+    display: none;
+}
+
+.resumo-agendamento {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid var(--borda);
+    border-radius: var(--raio-lg);
+    background: var(--fundo-claro);
+}
+
+.resumo-agendamento__linha,
+.resumo-agendamento__valor {
+    margin: 0;
+    font-size: 15px;
+}
+
+.resumo-agendamento__linha {
+    color: var(--texto-principal);
+}
+
+.resumo-agendamento hr {
+    width: 100%;
+    margin: 5px 0;
+    border: 0;
+    border-top: 1px solid var(--borda);
+}
+
+.resumo-agendamento__valor {
+    color: var(--vermelho-destaque);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.lista-meus-agendamentos {
+    margin-top: 20px;
+}
+
+.lista-meus-agendamentos__vazio {
+    margin: 0;
+    padding: 30px 0;
+    color: var(--texto-secundario);
+    text-align: center;
+}
+
+.logo-container { color:inherit; text-decoration:none; cursor:pointer; }
+.logo-container:focus-visible { outline:3px solid #38c184; outline-offset:4px; border-radius:5px; }

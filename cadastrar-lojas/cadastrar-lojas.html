@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Configurações básicas da página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastrar loja | AgendaUai</title>
+
+    <!-- Conecta o CSS exclusivo desta página -->
+    <link rel="stylesheet" href="cadastrar-lojas.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/agenda-uai-theme.css">
+</head>
+
+<body class="cadastro-loja-page">
+
+    <!-- =====================================
+         CABEÇALHO DA PÁGINA
+    ====================================== -->
+    <header class="cadastro-loja-header">
+
+        <!-- Volta para a página inicial do AgendaUai -->
+        <a href="../painel%20do%20profissional/index.html"
+           class="cadastro-loja-voltar">
+            ← Voltar
+        </a>
+
+        <h1>Cadastrar minha loja</h1>
+
+        <p>Apresente seu negócio aos seus clientes.</p>
+
+    </header>
+
+
+    <!-- =====================================
+         CONTEÚDO PRINCIPAL DO CADASTRO
+    ====================================== -->
+    <main class="cadastro-loja-container">
+
+        <form id="form-cadastro-loja">
+
+            <!-- =================================
+                 1. FOTO DA LOJA
+            ================================== -->
+            <section class="cadastro-loja-card foto-loja-section">
+
+                <div class="cadastro-loja-section-title">
+                    <h2>Foto da loja</h2>
+                    <p>Escolha uma imagem para representar seu negócio.</p>
+                </div>
+
+                <!--
+                    Ao clicar na área cinza, o profissional
+                    poderá escolher uma imagem do computador.
+                -->
+                <label
+                    for="foto-loja"
+                    class="cadastro-loja-foto-preview"
+                    id="foto-loja-preview"
+                >
+                    <span class="foto-loja-placeholder">+</span>
+
+                    <span class="foto-loja-placeholder-text">
+                        Adicionar foto
+                    </span>
+                </label>
+
+                <!-- Campo que permite selecionar a imagem -->
+                <input
+                    type="file"
+                    id="foto-loja"
+                    name="fotoLoja"
+                    accept="image/jpeg,image/png,image/webp"
+                    hidden
+                >
+
+                <p class="cadastro-loja-ajuda">
+                    Formatos aceitos: JPG, PNG ou WEBP.
+                </p>
+
+            </section>
+
+
+            <!-- =================================
+                 2. DESCRIÇÃO DA LOJA
+            ================================== -->
+            <section class="cadastro-loja-card descricao-loja-section">
+
+                <div class="cadastro-loja-section-title">
+                    <h2>Descrição da loja</h2>
+                    <p>Conte um pouco sobre seu negócio.</p>
+                </div>
+
+                <label for="nome-loja" class="cadastro-loja-label">Nome da loja *</label>
+                <input
+                    id="nome-loja"
+                    name="nomeLoja"
+                    class="cadastro-loja-input"
+                    type="text"
+                    maxlength="120"
+                    placeholder="Ex.: Studio Bela Unha"
+                    required
+                >
+
+                <label for="categoria-loja" class="cadastro-loja-label">Categoria do estabelecimento *</label>
+                <select id="categoria-loja" name="categoriaId" class="cadastro-loja-input" required>
+                    <option value="">Carregando categorias…</option>
+                </select>
+
+                <div class="cadastro-loja-section-title" style="margin-top:24px">
+                    <h2>Localização da loja</h2>
+                    <p>Informe o endereço para localizar sua loja no mapa da Home. Você também pode marcar o ponto manualmente.</p>
+                </div>
+                <label for="endereco-loja" class="cadastro-loja-label">Rua e número *</label>
+                <input id="endereco-loja" name="endereco" class="cadastro-loja-input" type="text" maxlength="180" placeholder="Ex.: Avenida Amazonas, 1200" required>
+                <div class="cadastro-loja-servico-campos">
+                    <div><label for="bairro-loja" class="cadastro-loja-label">Bairro *</label><input id="bairro-loja" name="bairro" class="cadastro-loja-input" type="text" required placeholder="Centro"></div>
+                    <div><label for="cidade-loja" class="cadastro-loja-label">Cidade *</label><input id="cidade-loja" name="cidade" class="cadastro-loja-input" type="text" required placeholder="Betim"></div>
+                </div>
+                <div class="cadastro-loja-servico-campos">
+                    <div><label for="estado-loja" class="cadastro-loja-label">Estado (UF) *</label><input id="estado-loja" name="estado" class="cadastro-loja-input" type="text" maxlength="2" required value="MG" placeholder="MG"></div>
+                    <div><label for="cep-loja" class="cadastro-loja-label">CEP</label><input id="cep-loja" name="cep" class="cadastro-loja-input" type="text" inputmode="numeric" placeholder="32600-000"></div>
+                </div>
+                <div class="cadastro-loja-servico-campos">
+                    <div><label for="latitude-loja" class="cadastro-loja-label">Latitude *</label><input id="latitude-loja" name="latitude" class="cadastro-loja-input" type="number" step="any" required placeholder="Preenchida pelo endereço"></div>
+                    <div><label for="longitude-loja" class="cadastro-loja-label">Longitude *</label><input id="longitude-loja" name="longitude" class="cadastro-loja-input" type="number" step="any" required placeholder="Preenchida pelo endereço"></div>
+                </div>
+                <button type="button" class="cadastro-loja-btn-secundario" id="localizar-endereco">Localizar endereço no mapa</button>
+                <p class="cadastro-loja-ajuda" id="status-localizacao">Preencha o endereço e clique em “Localizar endereço no mapa”. Se necessário, ajuste latitude e longitude manualmente.</p>
+
+                <label
+                    for="descricao-loja"
+                    class="cadastro-loja-label"
+                >
+                    Apresente sua loja
+                </label>
+
+                <!--
+                    O profissional escreve a descrição.
+                    O limite é de 600 caracteres.
+                -->
+                <textarea
+                    id="descricao-loja"
+                    name="descricao"
+                    class="cadastro-loja-textarea"
+                    placeholder="Ex.: Somos um salão de beleza especializado em cuidados com os cabelos, unhas e bem-estar..."
+                    maxlength="600"
+                    rows="5"
+                    required
+                ></textarea>
+
+                <!-- O JavaScript atualizará este contador -->
+                <div class="cadastro-loja-contador">
+                    <span id="contador-descricao">0</span>/600 caracteres
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 3. PÚBLICO-ALVO
+            ================================== -->
+            <section class="cadastro-loja-card publico-loja-section">
+
+                <div class="cadastro-loja-section-title">
+                    <h2>Público-alvo</h2>
+                    <p>Quem são os clientes que sua loja deseja atender?</p>
+                </div>
+
+                <!--
+                    Os públicos selecionados aparecerão
+                    aqui depois que o profissional concluir.
+                -->
+                <div
+                    class="cadastro-loja-publicos-selecionados"
+                    id="publicos-selecionados"
+                ></div>
+
+                <!-- Abre o popup com as opções de público -->
+                <button
+                    type="button"
+                    class="cadastro-loja-adicionar-publico"
+                    id="abrir-popup-publicos"
+                    aria-label="Adicionar público-alvo"
+                >
+                    <span>+</span>
+                    <span>Adicionar público-alvo</span>
+                </button>
+
+                <p class="cadastro-loja-ajuda">
+                    Escolha até 7 opções que representem seus clientes.
+                </p>
+
+            </section>
+
+
+            <!-- =================================
+                 4. SERVIÇOS DA LOJA
+            ================================== -->
+            <section class="cadastro-loja-card servicos-loja-section">
+
+                <div class="cadastro-loja-section-title">
+                    <h2>Serviços</h2>
+                    <p>Cadastre os serviços oferecidos pela sua loja.</p>
+                </div>
+
+                <!--
+                    O JavaScript adicionará um cartão
+                    para cada serviço cadastrado.
+                -->
+                <div
+                    class="cadastro-loja-servicos-lista"
+                    id="servicos-lista"
+                >
+                    <p
+                        class="cadastro-loja-sem-servicos"
+                        id="sem-servicos"
+                    >
+                        Você ainda não cadastrou nenhum serviço.
+                    </p>
+                </div>
+
+                  <!-- Exibe o formulário para adicionar um serviço -->
+                <a
+                    href="../painel%20do%20profissional/servicos.html"
+                    class="cadastro-loja-btn-secundario"
+                    id="abrir-cadastro-servico"
+                        >
+                     + Adicionar serviço
+                </a>
+
+
+                <!-- FORMULÁRIO DE NOVO SERVIÇO -->
+                <div
+                    class="cadastro-loja-form-servico"
+                    id="form-servico-container"
+                    hidden
+                >
+
+                    <h3>Adicionar serviço</h3>
+
+                    <!-- Nome do serviço -->
+                    <label
+                        for="nome-servico"
+                        class="cadastro-loja-label"
+                    >
+                        Nome do serviço
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome-servico"
+                        class="cadastro-loja-input"
+                        placeholder="Ex.: Corte de cabelo"
+                        maxlength="100"
+                    >
+
+
+                    <!-- Preço e duração ficam lado a lado -->
+                    <div class="cadastro-loja-servico-campos">
+
+                        <div>
+                            <label
+                                for="preco-servico"
+                                class="cadastro-loja-label"
+                            >
+                                Preço (R$)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="preco-servico"
+                                class="cadastro-loja-input"
+                                placeholder="50.00"
+                                min="0"
+                                step="0.01"
+                            >
+                        </div>
+
+                        <div>
+                            <label
+                                for="duracao-servico"
+                                class="cadastro-loja-label"
+                            >
+                                Duração (minutos)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="duracao-servico"
+                                class="cadastro-loja-input"
+                                placeholder="30"
+                                min="1"
+                                step="1"
+                            >
+                        </div>
+
+                    </div>
+
+
+                    <!-- Botões do formulário de serviço -->
+                    <div class="cadastro-loja-acoes-servico">
+
+                        <button
+                            type="button"
+                            class="cadastro-loja-btn-cancelar"
+                            id="cancelar-servico"
+                        >
+                            Cancelar
+                        </button>
+
+                        <button
+                            type="button"
+                            class="cadastro-loja-btn-principal"
+                            id="salvar-servico"
+                        >
+                            Adicionar serviço
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 5. BOTÕES FINAIS
+            ================================== -->
+            <div class="cadastro-loja-acoes-finais">
+
+                <!-- Cancela e volta para a página inicial -->
+                <a
+                    href="../painel%20do%20profissional/index.html"
+                    class="cadastro-loja-btn-voltar"
+                >
+                    Cancelar
+                </a>
+
+                <!-- Valida os campos do cadastro -->
+                <button
+                    type="submit"
+                    class="cadastro-loja-btn-principal"
+                >
+                    Cadastrar loja
+                </button>
+
+            </div>
+
+            <!-- Mensagens de validação e resultado -->
+            <p
+                class="cadastro-loja-mensagem"
+                id="mensagem-cadastro"
+                role="status"
+                aria-live="polite"
+            ></p>
+
+        </form>
+
+    </main>
+
+
+    <!-- =====================================
+         POPUP DE SELEÇÃO DO PÚBLICO-ALVO
+    ====================================== -->
+    <div
+        class="cadastro-loja-modal"
+        id="popup-publicos"
+        hidden
+    >
+
+        <div
+            class="cadastro-loja-modal-conteudo"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="titulo-popup-publicos"
+        >
+
+            <!-- Título e botão para fechar -->
+            <div class="cadastro-loja-modal-header">
+
+                <div>
+                    <h2 id="titulo-popup-publicos">
+                        Público-alvo
+                    </h2>
+
+                    <p>Selecione até 7 opções.</p>
+                </div>
+
+                <button
+                    type="button"
+                    class="cadastro-loja-modal-fechar"
+                    id="fechar-popup-publicos"
+                    aria-label="Fechar janela"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <!-- Contador das opções selecionadas -->
+            <p class="cadastro-loja-selecao-contador">
+                Selecionados:
+                <strong id="contador-publicos">0</strong>/7
+            </p>
+
+
+            <!--
+                O JavaScript criará as opções de público
+                dentro deste container.
+            -->
+            <div
+                class="cadastro-loja-opcoes-publico"
+                id="opcoes-publicos"
+            ></div>
+
+
+            <!-- Mensagem de erro caso exceda o limite -->
+            <p
+                class="cadastro-loja-erro-publico"
+                id="erro-publicos"
+                role="status"
+            ></p>
+
+
+            <!-- Botões do popup -->
+            <div class="cadastro-loja-modal-acoes">
+
+                <button
+                    type="button"
+                    class="cadastro-loja-btn-cancelar"
+                    id="cancelar-publicos"
+                >
+                    Cancelar
+                </button>
+
+                <button
+                    type="button"
+                    class="cadastro-loja-btn-principal"
+                    id="concluir-publicos"
+                >
+                    Concluir
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         CONEXÃO COM O JAVASCRIPT
+         Deve ficar antes do fechamento do body.
+    ====================================== -->
+    <script src="../shared/agenda-uai-api.js"></script>
+    <script src="../shared/auth-guard.js"></script>
+    <script src="cadastrar-lojas.js"></script>
+
+</body>
+</html>

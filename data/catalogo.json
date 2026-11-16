@@ -1,0 +1,487 @@
+{
+  "schemaVersion": 1,
+  "origem": "Exportação pública do catálogo AgendaUai",
+  "exportadoEm": "2026-11-11",
+  "lojas": [
+    {
+      "id": "82516e4e-9fd9-438d-884a-6dd9de0c0449",
+      "nome": "Leonardo César",
+      "descricao": "",
+      "logoUrl": "/uploads/loja-82516e4e-9fd9-438d-884a-6dd9de0c0449.png",
+      "endereco": {
+        "bairro": "Savassi",
+        "cidade": "BH",
+        "estado": "MG",
+        "latitude": -19.93725,
+        "longitude": -43.93558
+      },
+      "categorias": [
+        {
+          "id": "3b941fce-26a4-4d87-8820-a212192f4649",
+          "nome": "Barbearia",
+          "slug": "barbearia"
+        }
+      ],
+      "publicosAlvo": [
+        {
+          "id": "1eb565f8-0252-4ebb-981e-a433b0803ee7",
+          "nome": "Crianças",
+          "slug": "criancas"
+        },
+        {
+          "id": "ac9ee8a9-74d2-4cbc-90a7-322de7fe1725",
+          "nome": "Jovens adultos",
+          "slug": "jovens-adultos"
+        },
+        {
+          "id": "cf27c9df-2814-46aa-9883-f59ab4203e23",
+          "nome": "Idosos",
+          "slug": "idosos"
+        },
+        {
+          "id": "0ccfc7a2-3c31-4fba-abca-45a0f41c4e2b",
+          "nome": "Homens",
+          "slug": "homens"
+        },
+        {
+          "id": "19da182e-2d65-4e03-8c02-1e4d67dd1e17",
+          "nome": "Famílias",
+          "slug": "familias"
+        },
+        {
+          "id": "6681c7c3-99d5-417b-979d-71900d4f99c7",
+          "nome": "Casais",
+          "slug": "casais"
+        },
+        {
+          "id": "b2a6b3f1-3b10-4c85-b1da-7718ffc9db62",
+          "nome": "Gestantes",
+          "slug": "gestantes"
+        }
+      ],
+      "servicos": [
+        {
+          "id": "9b62844a-9b6c-42ab-b485-6fcaf33d898c",
+          "nome": "unha",
+          "descricao": null,
+          "preco": 20.0,
+          "duracaoMinutos": 43
+        },
+        {
+          "id": "d2329aa8-aacb-4d56-bc1a-bb44f3e4f2d5",
+          "nome": "ççççç",
+          "descricao": "",
+          "preco": 88.0,
+          "duracaoMinutos": 88
+        }
+      ],
+      "redesSociais": [
+        {
+          "plataforma": "instagram",
+          "url": "https://www.instagram.com/kkkkkkkkk/"
+        }
+      ],
+      "horariosSemanais": [
+        {
+          "diaSemana": 1,
+          "inicio": "14:00",
+          "fim": "16:00"
+        },
+        {
+          "diaSemana": 2,
+          "inicio": "14:00",
+          "fim": "16:00"
+        },
+        {
+          "diaSemana": 3,
+          "inicio": "14:00",
+          "fim": "16:00"
+        },
+        {
+          "diaSemana": 4,
+          "inicio": "14:00",
+          "fim": "16:00"
+        },
+        {
+          "diaSemana": 5,
+          "inicio": "14:00",
+          "fim": "16:00"
+        }
+      ],
+      "excecoes": [],
+      "precisaoCoordenadas": "Centro do bairro (aproximado)",
+      "fonteCoordenadas": "https://mapcarta.com/N352706912"
+    },
+    {
+      "id": "f70799bb-9361-4ae3-9a95-83e5ab85f844",
+      "nome": "Petshop Companheiros",
+      "descricao": "Bem-vindo(a) ao Petshop Companheiros! Somos um espaço dedicado ao carinho, cuidado e bem-estar do seu melhor amigo. Oferecemos serviços completos de banho, tosa e atendimento especializado para garantir que seu pet fique lindo, saudável e feliz.",
+      "logoUrl": "/uploads/loja-f70799bb-9361-4ae3-9a95-83e5ab85f844.webp",
+      "endereco": {
+        "bairro": "Park Dona Gumercinda Martins",
+        "cidade": "Nova Serrana",
+        "estado": "MG",
+        "latitude": -19.8691,
+        "longitude": -44.99893
+      },
+      "categorias": [
+        {
+          "id": "8c3c7833-020e-4359-bdb4-fc749f5eba1a",
+          "nome": "Pet shop",
+          "slug": "pet-shop"
+        }
+      ],
+      "publicosAlvo": [
+        {
+          "id": "2bb170d8-aaef-4d61-916a-602727132ee9",
+          "nome": "Donos de pets",
+          "slug": "donos-de-pets"
+        }
+      ],
+      "servicos": [
+        {
+          "id": "e867e888-94d0-4e91-bc97-f67aecdea960",
+          "nome": "Banho",
+          "descricao": null,
+          "preco": 40.0,
+          "duracaoMinutos": 60
+        }
+      ],
+      "redesSociais": [],
+      "horariosSemanais": [
+        {
+          "diaSemana": 1,
+          "inicio": "07:00",
+          "fim": "17:00"
+        },
+        {
+          "diaSemana": 2,
+          "inicio": "07:00",
+          "fim": "17:00"
+        },
+        {
+          "diaSemana": 3,
+          "inicio": "07:00",
+          "fim": "17:00"
+        },
+        {
+          "diaSemana": 4,
+          "inicio": "07:00",
+          "fim": "17:00"
+        },
+        {
+          "diaSemana": 5,
+          "inicio": "07:00",
+          "fim": "17:00"
+        },
+        {
+          "diaSemana": 6,
+          "inicio": "07:00",
+          "fim": "12:00"
+        }
+      ],
+      "excecoes": [],
+      "precisaoCoordenadas": "Centro do bairro (aproximado)",
+      "fonteCoordenadas": "https://mapcarta.com/pt/N4714418087"
+    },
+    {
+      "id": "b481602d-13b9-4cfd-8417-d04ff35517d5",
+      "nome": "Glanz Estética Automotiva",
+      "descricao": "Sejam bem-vindos à Glanz Estética Automotiva! Somos especialistas em cuidar do seu veículo com alto padrão de qualidade. Oferecemos serviços completos de lavagem detalhada, polimento técnico, higienização interna e proteção de pintura para garantir que seu carro volte a brilhar como novo.",
+      "logoUrl": "/uploads/loja-b481602d-13b9-4cfd-8417-d04ff35517d5.png",
+      "endereco": {
+        "bairro": "Jardim Padre Lauro",
+        "cidade": "Nova Serrana",
+        "estado": "MG",
+        "latitude": -19.8766,
+        "longitude": -45.00657
+      },
+      "categorias": [
+        {
+          "id": "2a2ebc43-3d21-4ae5-a3b2-6331a21bfe97",
+          "nome": "Lava-jato",
+          "slug": "lava-jato"
+        }
+      ],
+      "publicosAlvo": [
+        {
+          "id": "2bb170d8-aaef-4d61-916a-602727132ee9",
+          "nome": "Donos de pets",
+          "slug": "donos-de-pets"
+        }
+      ],
+      "servicos": [
+        {
+          "id": "bd06b7a7-47e3-4b97-aaed-163c196e631b",
+          "nome": "Banho",
+          "descricao": null,
+          "preco": 40.0,
+          "duracaoMinutos": 60
+        }
+      ],
+      "redesSociais": [],
+      "horariosSemanais": [
+        {
+          "diaSemana": 1,
+          "inicio": "07:00",
+          "fim": "19:00"
+        },
+        {
+          "diaSemana": 2,
+          "inicio": "07:00",
+          "fim": "19:00"
+        },
+        {
+          "diaSemana": 3,
+          "inicio": "07:00",
+          "fim": "19:00"
+        },
+        {
+          "diaSemana": 4,
+          "inicio": "07:00",
+          "fim": "19:00"
+        },
+        {
+          "diaSemana": 5,
+          "inicio": "07:00",
+          "fim": "19:00"
+        },
+        {
+          "diaSemana": 6,
+          "inicio": "07:00",
+          "fim": "11:00"
+        }
+      ],
+      "excecoes": [],
+      "precisaoCoordenadas": "Centro do bairro (aproximado)",
+      "fonteCoordenadas": "https://mapcarta.com/pt/N4714418085"
+    },
+    {
+      "id": "0e324874-b33d-43b7-875b-47389456a646",
+      "nome": "LUMINA STUDIO",
+      "descricao": "Somos um espaço dedicado à sua beleza e bem-estar. Oferecemos serviços especializados em cuidados com os cabelos, unhas e estética, contando com profissionais qualificados para garantir que você tenha um momento relaxante e saia renovado(a).",
+      "logoUrl": "/uploads/loja-0e324874-b33d-43b7-875b-47389456a646.webp",
+      "endereco": {
+        "bairro": "Jardim Padre Lauro",
+        "cidade": "Nova Serrana",
+        "estado": "MG",
+        "latitude": -19.8766,
+        "longitude": -45.00657
+      },
+      "categorias": [
+        {
+          "id": "4cad18d1-f4ee-4c1a-9fec-a3ccb7034d2e",
+          "nome": "Clínica de estética",
+          "slug": "clinica-de-estetica"
+        }
+      ],
+      "publicosAlvo": [
+        {
+          "id": "c0827037-7dce-4bf9-88ff-d258c018e2e6",
+          "nome": "Adolescentes",
+          "slug": "adolescentes"
+        },
+        {
+          "id": "ac9ee8a9-74d2-4cbc-90a7-322de7fe1725",
+          "nome": "Jovens adultos",
+          "slug": "jovens-adultos"
+        },
+        {
+          "id": "a0b297ca-1745-4b6e-804a-19fbe84b13eb",
+          "nome": "Adultos",
+          "slug": "adultos"
+        },
+        {
+          "id": "cf27c9df-2814-46aa-9883-f59ab4203e23",
+          "nome": "Idosos",
+          "slug": "idosos"
+        },
+        {
+          "id": "1ba2aabb-c4c1-491f-add1-a09295d700fd",
+          "nome": "Mulheres",
+          "slug": "mulheres"
+        },
+        {
+          "id": "0ccfc7a2-3c31-4fba-abca-45a0f41c4e2b",
+          "nome": "Homens",
+          "slug": "homens"
+        }
+      ],
+      "servicos": [
+        {
+          "id": "2400cf69-78b1-469e-8f38-8ed8e50cc143",
+          "nome": "Manicure",
+          "descricao": null,
+          "preco": 45.0,
+          "duracaoMinutos": 40
+        },
+        {
+          "id": "5b8959af-20fd-428b-a3d2-cf83c8237a33",
+          "nome": "pedicure",
+          "descricao": "Cutilagem, esmaltação e spa dos pés",
+          "preco": 45.0,
+          "duracaoMinutos": 50
+        }
+      ],
+      "redesSociais": [
+        {
+          "plataforma": "instagram",
+          "url": "https://www.instagram.com/lumina_studio"
+        }
+      ],
+      "horariosSemanais": [
+        {
+          "diaSemana": 1,
+          "inicio": "08:00",
+          "fim": "19:00"
+        },
+        {
+          "diaSemana": 2,
+          "inicio": "08:00",
+          "fim": "19:00"
+        },
+        {
+          "diaSemana": 3,
+          "inicio": "08:00",
+          "fim": "19:00"
+        },
+        {
+          "diaSemana": 4,
+          "inicio": "08:00",
+          "fim": "19:00"
+        },
+        {
+          "diaSemana": 5,
+          "inicio": "08:00",
+          "fim": "19:00"
+        },
+        {
+          "diaSemana": 6,
+          "inicio": "08:00",
+          "fim": "19:00"
+        }
+      ],
+      "excecoes": [],
+      "precisaoCoordenadas": "Centro do bairro (aproximado)",
+      "fonteCoordenadas": "https://mapcarta.com/pt/N4714418085"
+    }
+  ],
+  "categorias": [
+    {
+      "id": "3b941fce-26a4-4d87-8820-a212192f4649",
+      "nome": "Barbearia",
+      "slug": "barbearia",
+      "descricao": "Corte de cabelo, barba e cuidados masculinos."
+    },
+    {
+      "id": "472d1502-3e9d-43a3-b6f7-c258a7d9e8fb",
+      "nome": "Salão de beleza",
+      "slug": "salao-de-beleza",
+      "descricao": "Serviços de beleza e cuidados pessoais."
+    },
+    {
+      "id": "8c3c7833-020e-4359-bdb4-fc749f5eba1a",
+      "nome": "Pet shop",
+      "slug": "pet-shop",
+      "descricao": "Serviços e cuidados para animais de estimação."
+    },
+    {
+      "id": "2a2ebc43-3d21-4ae5-a3b2-6331a21bfe97",
+      "nome": "Lava-jato",
+      "slug": "lava-jato",
+      "descricao": "Lavagem e estética automotiva."
+    },
+    {
+      "id": "4cad18d1-f4ee-4c1a-9fec-a3ccb7034d2e",
+      "nome": "Clínica de estética",
+      "slug": "clinica-de-estetica",
+      "descricao": "Tratamentos estéticos e de bem-estar."
+    }
+  ],
+  "publicosAlvo": [
+    {
+      "id": "1eb565f8-0252-4ebb-981e-a433b0803ee7",
+      "nome": "Crianças",
+      "slug": "criancas",
+      "descricao": "Atendimento para crianças."
+    },
+    {
+      "id": "c0827037-7dce-4bf9-88ff-d258c018e2e6",
+      "nome": "Adolescentes",
+      "slug": "adolescentes",
+      "descricao": "Atendimento para adolescentes."
+    },
+    {
+      "id": "ac9ee8a9-74d2-4cbc-90a7-322de7fe1725",
+      "nome": "Jovens adultos",
+      "slug": "jovens-adultos",
+      "descricao": "Atendimento para jovens adultos."
+    },
+    {
+      "id": "a0b297ca-1745-4b6e-804a-19fbe84b13eb",
+      "nome": "Adultos",
+      "slug": "adultos",
+      "descricao": "Atendimento para adultos."
+    },
+    {
+      "id": "cf27c9df-2814-46aa-9883-f59ab4203e23",
+      "nome": "Idosos",
+      "slug": "idosos",
+      "descricao": "Atendimento para idosos."
+    },
+    {
+      "id": "1ba2aabb-c4c1-491f-add1-a09295d700fd",
+      "nome": "Mulheres",
+      "slug": "mulheres",
+      "descricao": "Atendimento para mulheres."
+    },
+    {
+      "id": "0ccfc7a2-3c31-4fba-abca-45a0f41c4e2b",
+      "nome": "Homens",
+      "slug": "homens",
+      "descricao": "Atendimento para homens."
+    },
+    {
+      "id": "19da182e-2d65-4e03-8c02-1e4d67dd1e17",
+      "nome": "Famílias",
+      "slug": "familias",
+      "descricao": "Atendimento para famílias."
+    },
+    {
+      "id": "6681c7c3-99d5-417b-979d-71900d4f99c7",
+      "nome": "Casais",
+      "slug": "casais",
+      "descricao": "Atendimento para casais."
+    },
+    {
+      "id": "b2a6b3f1-3b10-4c85-b1da-7718ffc9db62",
+      "nome": "Gestantes",
+      "slug": "gestantes",
+      "descricao": "Atendimento para gestantes."
+    },
+    {
+      "id": "95f85004-f4dc-487e-a21f-71813dd781a7",
+      "nome": "Pessoas com deficiência",
+      "slug": "pessoas-com-deficiencia",
+      "descricao": "Atendimento acessível."
+    },
+    {
+      "id": "2bb170d8-aaef-4d61-916a-602727132ee9",
+      "nome": "Donos de pets",
+      "slug": "donos-de-pets",
+      "descricao": "Atendimento para tutores de animais."
+    },
+    {
+      "id": "f582843a-6a36-4e1e-aca0-0538e57d7d92",
+      "nome": "Empresas e profissionais",
+      "slug": "empresas-e-profissionais",
+      "descricao": "Atendimento para empresas e profissionais."
+    },
+    {
+      "id": "e4867e96-e0f7-47f1-abe5-b80f53f49013",
+      "nome": "Moradores do bairro",
+      "slug": "moradores-do-bairro",
+      "descricao": "Atendimento para moradores da região."
+    }
+  ]
+}
