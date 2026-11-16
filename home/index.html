@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <!-- informa ao navegador como o documento deve ser processado -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Ajusta a escala e a largura da página conforme o dispositivo. -->
+  
+
+  <title>AgendaUai — Encontre e agende serviços perto de você</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+  <link rel="stylesheet" href="style.css?v=20261112-botoes-alinhados">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/agenda-uai-theme.css">
+</head>
+<body>
+
+  <!-- ===== CABEÇALHO ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <!--div é elemento de blocos  -->
+
+      <a href="index.html" class="header__brand">
+
+        <img src="../assets/logo.jpg" alt="AgendaUai" class="header__logo">
+      </a>
+
+      <nav class="header__nav" aria-label="Navegação principal">
+        <a href="#servicos">Serviços</a>
+        <!--elemento "a", significa ancora, representa um link, endereço de página   -->
+
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#estabelecimentos">Sou um estabelecimento</a>
+      </nav>
+
+      <div class="header__actions">
+        <a href="../login%20e%20cadastro/login1510.html" class="btn btn--ghost">Entrar</a>
+        <a href="../login%20e%20cadastro/login1510.html?modo=cadastro" class="btn btn--primary">Criar conta</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTEÚDO ===== -->
+  <main>
+
+    <!-- HERO / BUSCA -->
+    <section class="container hero">
+      <div class="hero__content">
+        <p class="hero__eyebrow">Uai, precisando de um serviço?</p>
+        <h1 class="hero__title">
+          Descreva o que você precisa,<br>
+          a gente encontra <span class="hero__title-accent">pra você</span>.
+        </h1>
+        <p class="hero__subtitle">
+          Nada de filtro atrás de filtro. Diga o que procura — em texto ou por voz —
+          e o AgendaUai mostra os melhores estabelecimentos perto de você.
+        </p>
+
+        <form class="search-box" id="searchForm">
+          <button type="button" class="search-box__mic" id="micButton" aria-label="Buscar por voz">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M19 11a7 7 0 0 1-14 0M12 18v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <input
+            type="text"
+            id="searchInput"
+            class="search-box__input"
+            placeholder="Ex: corte de cabelo cacheado em Betim, sábado às 15h"
+            autocomplete="off"
+          >
+          <button type="submit" class="search-box__submit btn btn--primary">Buscar</button>
+        </form>
+
+        <p class="hero__hint" id="micHint" hidden>Ouvindo… pode falar o que você precisa.</p>
+
+        <div class="hero__location">
+          <button type="button" class="location-btn" id="locationButton">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z" stroke="currentColor" stroke-width="1.8"/>
+              <circle cx="12" cy="9.5" r="2.3" stroke="currentColor" stroke-width="1.8"/>
+            </svg>
+            Usar minha localização
+          </button>
+          <span class="location-status" id="locationStatus"></span>
+        </div>
+
+        <div class="hero__tags">
+          <span>Experimente:</span>
+          <button type="button" class="tag" data-query="Banho e tosa para cachorro grande em Belo Horizonte">Banho e tosa</button>
+          <button type="button" class="tag" data-query="Barbearia com horário disponível hoje à noite">Barbearia</button>
+          <button type="button" class="tag" data-query="Lavagem completa de carro perto de mim">Lava-jato</button>
+        </div>
+      </div>
+
+      <div class="hero__art">
+        <div class="hero__card hero__card--1" aria-hidden="true">
+          <span class="hero__card-dot"></span>
+          <!-- span não quebra linha -->
+
+          <div>
+            <strong>Studio Cacho &amp; Cia</strong>
+            <p>4.9 ★ · 1,2 km · Disponível às 15h</p>
+          </div>
+        </div>
+        <div class="hero__card hero__card--2" aria-hidden="true">
+          <span class="hero__card-dot hero__card-dot--alt"></span>
+          <div>
+            <strong>Pet Amigo Banho &amp; Tosa</strong>
+            <p>4.8 ★ · 800 m · Disponível hoje</p>
+          </div>
+        </div>
+
+        <!-- Mapa: aparece quando a pessoa autoriza a localização -->
+        <div class="hero__map" id="mapBox">
+          <div id="map" class="hero__map-canvas" role="region" aria-label="Mapa com serviços perto de você"></div>
+          <span class="hero__map-label"><i class="dot dot--voce"></i> Sua localização (quando ativada) &nbsp; <i class="dot dot--loja"></i> Lojas cadastradas</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section class="how" id="como-funciona">
+      <h2 class="section-title">Como funciona</h2>
+      <div class="container how__grid">
+        <article class="how__step">
+          <span class="how__number">1</span>
+          <h3>Diga o que precisa</h3>
+          <p>Escreva ou fale naturalmente, do seu jeito — sem categorias, sem filtro.</p>
+        </article>
+        <article class="how__step">
+          <span class="how__number">2</span>
+          <h3>Compare as opções</h3>
+          <p>Veja estabelecimentos próximos, avaliados e com horário disponível.</p>
+        </article>
+        <article class="how__step">
+          <span class="how__number">3</span>
+          <h3>Agende em segundos</h3>
+          <p>Escolha o horário e pronto — confirmação na hora, sem ligação.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="container services" id="servicos">
+      <h2 class="section-title">Para todo tipo de serviço</h2>
+      <div class="services__grid" id="categorias-do-catalogo" aria-live="polite">
+        <p class="public-stores__message">Carregando categorias…</p>
+      </div>
+    </section>
+
+    <section class="container public-stores" id="lojas-publicadas">
+      <p class="public-stores__intro">Demonstração estática: cadastros feitos neste navegador ficam salvos apenas neste dispositivo.</p>
+      <h2 class="section-title">Lojas no AgendaUai</h2>
+      <p class="public-stores__intro">Veja os serviços disponíveis e escolha um horário.</p>
+      <div class="public-stores__grid" id="lista-lojas-publicadas" aria-live="polite">
+        <p class="public-stores__message" id="lojas-publicadas-mensagem">Carregando lojas…</p>
+      </div>
+    </section>
+
+    <!-- CTA ESTABELECIMENTO -->
+    <section class="container cta-business" id="estabelecimentos">
+      <div class="cta-business__text">
+        <h2>Tem um comércio de serviços?</h2>
+        <p>Cadastre sua loja, organize sua agenda e receba novos clientes pelo AgendaUai — de graça.</p>
+      </div>
+      <a href="../cadastrar-lojas/cadastrar-lojas.html" class="btn btn--primary btn--lg">Cadastrar meu negócio</a>
+    </section>
+
+  </main>
+
+  <!-- ===== RODAPÉ ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="index.html" class="footer__brand-link" aria-label="Voltar para a página inicial"><img src="../assets/logo.jpg" alt="AgendaUai" class="footer__logo"></a>
+        <p>Busca e agendamento de serviços locais, do jeito mineiro.</p>
+      </div>
+
+      <nav class="footer__links" aria-label="Links institucionais">
+        <div>
+          <h4>Plataforma</h4>
+          <a href="#servicos">Serviços</a>
+          <a href="#como-funciona">Como funciona</a>
+          <a href="#estabelecimentos">Para estabelecimentos</a>
+        </div>
+        <div>
+          <h4>Projeto</h4>
+          <a href="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2026-2-e1-proj-web-t5-g3-AgendaUai" target="_blank" rel="noopener">Repositório</a>
+        </div>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 AgendaUai — Projeto acadêmico, curso de Análise e Desenvolvimento de Sistemas, PUC Minas.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <script src="../shared/agenda-uai-api.js"></script>
+  <script src="script.js"></script>
+  <script src="lojas-publicadas.js"></script>
+</body>
+</html>

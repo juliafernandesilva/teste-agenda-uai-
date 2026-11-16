@@ -1,0 +1,543 @@
+/* ==========================================================
+   AgendaUai — Design tokens
+   ========================================================== */
+:root {
+  --azul-principal: #2D6CA3;
+  --azul-escuro: #1F4E7A;
+  --verde-secundario: #5FBF87;
+  --vermelho-destaque: #C1272D;
+  --branco: #FFFFFF;
+  --fundo-claro: #F6F7F5;
+  --texto-principal: #24292B;
+  --texto-secundario: #6B7370;
+  --borda: #E1E5E1;
+
+  --fonte-titulo: 'Poppins', sans-serif;
+  --fonte-corpo: 'Inter', sans-serif;
+
+  --raio: 10px;
+  --raio-lg: 20px;
+  --sombra: 0 8px 24px rgba(31, 78, 122, 0.10);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--fonte-corpo);
+  color: var(--texto-principal);
+  background: var(--branco);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+
+/* Container central: limita a largura e centraliza o conteúdo */
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  color: var(--azul-escuro);
+  margin: 0 0 2.25rem;
+}
+
+/* ==========================================================
+   Botões
+   ========================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-family: var(--fonte-corpo);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  white-space: nowrap;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+.btn--primary {
+  background: var(--vermelho-destaque);
+  color: var(--branco);
+}
+.btn--primary:hover { background: #a91f24; }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--azul-escuro);
+  border-color: var(--borda);
+}
+.btn--ghost:hover { border-color: var(--azul-principal); }
+
+.btn--lg { padding: 0.9rem 1.9rem; font-size: 1.02rem; }
+
+/* ==========================================================
+   Cabeçalho
+   ========================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--branco);
+  border-bottom: 1px solid var(--borda);
+}
+
+.header__inner {
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-right: auto;
+}
+.header__logo { height: 52px; width: auto; object-fit: contain; }
+.header__brand-name {
+  font-family: var(--fonte-titulo);
+  font-weight: 500;
+  font-size: 1.15rem;
+  color: var(--azul-escuro);
+}
+.header__brand-name strong { color: var(--verde-secundario); font-weight: 700; }
+
+.header__nav {
+  display: flex;
+  gap: 1.75rem;
+}
+.header__nav a {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--texto-secundario);
+  padding: 0.4rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.header__nav a:hover {
+  color: var(--azul-escuro);
+  border-color: var(--verde-secundario);
+}
+
+.header__actions { display: flex; gap: 0.6rem; }
+
+/* ==========================================================
+   Hero / Busca
+   ========================================================== */
+.hero {
+  padding: 4rem 1.5rem 5rem;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero__eyebrow {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--verde-secundario);
+  margin: 0 0 0.75rem;
+}
+
+.hero__title {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: clamp(2.1rem, 4vw, 2.9rem);
+  line-height: 1.18;
+  color: var(--azul-escuro);
+  margin: 0 0 1.1rem;
+}
+.hero__title-accent { color: var(--vermelho-destaque); }
+
+.hero__subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--texto-secundario);
+  max-width: 46ch;
+  margin: 0 0 2rem;
+}
+
+/* Search box */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--branco);
+  border: 1.5px solid var(--borda);
+  border-radius: 999px;
+  padding: 0.4rem 0.4rem 0.4rem 0.5rem;
+  box-shadow: var(--sombra);
+  max-width: 560px;
+}
+.search-box:focus-within {
+  border-color: var(--azul-principal);
+}
+
+.search-box__mic {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: var(--fundo-claro);
+  color: var(--azul-principal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+.search-box__mic:hover { background: #e7ede9; }
+.search-box__mic.is-listening {
+  background: var(--vermelho-destaque);
+  color: var(--branco);
+  animation: pulse 1.1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(193, 39, 45, 0.35); }
+  50% { box-shadow: 0 0 0 8px rgba(193, 39, 45, 0); }
+}
+
+.search-box__input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  font-family: var(--fonte-corpo);
+  font-size: 0.98rem;
+  color: var(--texto-principal);
+  background: transparent;
+  padding: 0.5rem 0.2rem;
+}
+.search-box__input::placeholder { color: #9AA39F; }
+
+.hero__hint {
+  margin: 0.7rem 0 0;
+  font-size: 0.85rem;
+  color: var(--vermelho-destaque);
+  font-weight: 500;
+}
+
+/* Geolocalização */
+.hero__location {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+.location-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--azul-principal);
+  font-family: var(--fonte-corpo);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.location-btn:hover { color: var(--azul-escuro); }
+.location-btn:disabled { color: var(--texto-secundario); cursor: default; }
+
+.location-status {
+  font-size: 0.85rem;
+  color: var(--verde-secundario);
+  font-weight: 500;
+}
+.location-status.is-error { color: var(--vermelho-destaque); }
+
+.hero__tags {
+  margin-top: 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--texto-secundario);
+}
+.tag {
+  border: 1px solid var(--borda);
+  background: var(--branco);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.83rem;
+  font-family: var(--fonte-corpo);
+  color: var(--azul-escuro);
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.tag:hover { border-color: var(--verde-secundario); background: #F1F9F4; }
+
+/* Hero art — cartões flutuantes (sem a marca d'água/logo no centro) */
+.hero__art {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-lg);
+  padding: 0.9rem 1.1rem;
+  box-shadow: var(--sombra);
+  width: 240px;
+}
+.hero__card strong {
+  font-family: var(--fonte-titulo);
+  font-size: 0.92rem;
+  color: var(--azul-escuro);
+  display: block;
+}
+.hero__card p {
+  margin: 0.2rem 0 0;
+  font-size: 0.8rem;
+  color: var(--texto-secundario);
+}
+.hero__card--1 { top: 10%; right: 0; }
+.hero__card--2 { bottom: 10%; left: -0.5rem; }
+
+.hero__card-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--verde-secundario);
+  flex-shrink: 0;
+}
+.hero__card-dot--alt { background: var(--azul-principal); }
+
+/* Mapa da localização (aparece no lugar dos cartões ao autorizar) */
+.hero__map {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 380px;
+  border-radius: var(--raio-lg);
+  overflow: hidden;
+  border: 1px solid var(--borda);
+  box-shadow: var(--sombra);
+  background: var(--fundo-claro);
+}
+.hero__map { isolation: isolate; } /* segura o z-index interno do mapa, pra não passar por cima do cabeçalho */
+.hero__map-canvas { width: 100%; height: 100%; min-height: 380px; }
+.hero__map-msg { padding: 2rem; color: var(--texto-secundario); font-size: 0.9rem; }
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.dot--voce { background: var(--azul-principal); }
+.dot--loja { background: var(--vermelho-destaque); }
+.hero__map-label {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  background: var(--branco);
+  color: var(--azul-escuro);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  box-shadow: var(--sombra);
+  z-index: 1000;
+}
+.hero__art .hero__card { display: none; }
+.hero__art .hero__map { display: block; }
+
+/* ==========================================================
+   Como funciona
+   ========================================================== */
+.how {
+  background: var(--fundo-claro);
+  padding: 4.5rem 1.5rem;
+}
+.how__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+.how__step h3 {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--azul-escuro);
+  margin: 0.9rem 0 0.5rem;
+}
+.how__step p {
+  margin: 0;
+  color: var(--texto-secundario);
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+.how__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--azul-principal);
+  color: var(--branco);
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* ==========================================================
+   Serviços
+   ========================================================== */
+.services {
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+}
+.services .section-title { text-align: left; }
+.services__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+.service-card {
+  flex: 1 1 160px;
+  border: 1.5px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 1.4rem 1rem;
+  font-family: var(--fonte-titulo);
+  font-weight: 500;
+  font-size: 0.98rem;
+  color: var(--azul-escuro);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.service-card:hover {
+  border-color: var(--verde-secundario);
+  background: #F1F9F4;
+}
+
+/* ==========================================================
+   CTA estabelecimento
+   ========================================================== */
+.cta-business {
+  margin-bottom: 4.5rem;
+  background: var(--azul-escuro);
+  border-radius: var(--raio-lg);
+  padding: 3rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.cta-business__text h2 {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--branco);
+  margin: 0 0 0.5rem;
+}
+.cta-business__text p {
+  margin: 0;
+  color: #CBD9E4;
+  max-width: 48ch;
+  line-height: 1.55;
+}
+
+/* ==========================================================
+   Rodapé
+   ========================================================== */
+.footer {
+  background: var(--azul-escuro);
+  color: #C9D6E0;
+}
+.footer__inner {
+  padding: 3rem 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.footer__brand { max-width: 280px; }
+.footer__logo { width: 36px; height: 36px; margin-bottom: 0.8rem; }
+.footer__brand p { font-size: 0.88rem; line-height: 1.55; margin: 0; }
+
+.footer__links {
+  display: flex;
+  gap: 3.5rem;
+}
+.footer__links h4 {
+  font-family: var(--fonte-titulo);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--branco);
+  margin: 0 0 0.8rem;
+}
+.footer__links a {
+  display: block;
+  font-size: 0.88rem;
+  color: #C9D6E0;
+  margin-bottom: 0.55rem;
+  transition: color 0.15s ease;
+}
+.footer__links a:hover { color: var(--branco); }
+
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding: 1.1rem 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+/* ==========================================================
+   Layout fixo para desktop
+   ========================================================== */
+body { min-width: 1280px; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+.public-stores { padding: 48px 0; }
+.public-stores__intro { margin: -20px 0 24px; color: #64748b; text-align: center; }
+.public-stores__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); grid-auto-rows: 1fr; align-items: stretch; gap: 18px; }
+.public-stores__message { grid-column: 1 / -1; padding: 20px; color: #64748b; text-align: center; }
+.public-store-card { display: flex; height: 100%; flex-direction: column; overflow: hidden; border: 1px solid #e2e8f0; border-radius: 18px; background: #fff; box-shadow: 0 8px 24px rgba(15, 23, 42, .06); }
+.public-store-card__image { display: block; width: 100%; height: 170px; object-fit: cover; }
+.public-store-card__content { display: grid; flex: 1; grid-template-rows: 48px 24px auto 46px 46px; align-content: start; align-items: start; gap: 8px; padding: 18px; }
+.public-store-card__content h3 { display: -webkit-box; overflow: hidden; margin: 0; color: #1F4E7A; line-height: 24px; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.public-store-card__content p { display: -webkit-box; overflow: hidden; margin: 0; color: #52657c; line-height: 21px; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.public-store-card__category { font-size: .9rem; font-weight: 700; }
+.public-store-card__address { font-size: .88rem; }
+.public-store-card__content .btn { display: inline-flex; align-self: start; align-items: center; justify-content: center; width: 192px; min-width: 192px; min-height: 46px; height: 46px; margin: 0; padding: 0 18px; text-decoration: none; }
+
+.public-store-card__description { margin:8px 0 10px; color:var(--texto-secundario, #5c6874); font-size:.88rem; line-height:1.5; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+
+.footer__brand-link { display:inline-flex; align-items:center; text-decoration:none; }
+.footer__brand-link:focus-visible { outline:3px solid #38c184; outline-offset:4px; border-radius:5px; }

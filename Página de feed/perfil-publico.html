@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil profissional | AgendaUai</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="../shared/agenda-uai-theme.css">
+</head>
+<body class="perfil-publico">
+  <header class="cabecalho perfil-nav">
+    <a href="../home/index.html" class="logo" aria-label="AgendaUai — página inicial">Agenda<span>Uai</span></a>
+    <nav class="menu" aria-label="Navegação principal"><a href="../home/index.html">Início</a><a href="index.html#profissionais">Profissionais</a></nav>
+  </header>
+  <div class="perfil-sticky" id="perfil-sticky" hidden><div class="perfil-sticky-inner"><div class="perfil-sticky-marca" id="perfil-sticky-marca"></div><div><strong id="perfil-sticky-nome"></strong><small id="perfil-sticky-local"></small></div><a id="perfil-agendar-topo" class="perfil-cta" href="#perfil-servicos">Agendar</a></div></div>
+  <main class="perfil-publico-main perfil-booksy">
+    <a class="perfil-voltar" href="index.html">← Voltar para profissionais</a>
+    <p class="perfil-status" id="perfil-status" role="status">Carregando perfil…</p>
+    <div id="perfil-conteudo" hidden>
+      <div class="perfil-layout">
+        <div class="perfil-coluna-principal">
+          <section class="perfil-hero-card">
+            <div class="perfil-capa" id="perfil-capa"><div class="perfil-capa-marca" id="perfil-marca"></div></div>
+            <div class="perfil-identidade">
+              <div class="perfil-tags" id="perfil-categorias"></div><h1 id="perfil-nome"></h1>
+              <p id="perfil-local"></p><p class="perfil-profissional-nome" id="perfil-profissional"></p>
+              <div class="perfil-avaliacao" id="perfil-avaliacao">Ainda sem avaliações</div>
+            </div>
+            <div class="perfil-hero-acoes"><button type="button" class="perfil-botao-claro" id="perfil-compartilhar">Compartilhar</button><a id="perfil-agendar-hero" class="perfil-cta" href="#perfil-servicos">Ver serviços e horários</a></div>
+          </section>
+
+          <section class="perfil-secao perfil-secao-servicos" id="perfil-servicos" aria-labelledby="perfil-servicos-titulo">
+            <div class="perfil-secao-cabecalho"><div><h2 id="perfil-servicos-titulo">Serviços</h2><p>Escolha um serviço para consultar os horários disponíveis.</p></div><input id="perfil-buscar-servico" class="perfil-buscar-servico" type="search" placeholder="Buscar serviços" aria-label="Buscar serviços"></div>
+            <div class="perfil-servicos-grupo"><h3>Serviços disponíveis</h3><div class="perfil-servicos" id="perfil-servicos-lista"></div></div>
+          </section>
+
+          <section class="perfil-secao perfil-avaliacoes-secao" aria-labelledby="perfil-avaliacoes-titulo">
+            <div class="perfil-secao-cabecalho"><div><h2 id="perfil-avaliacoes-titulo">Avaliações</h2><p id="perfil-nota-media">Carregando avaliações…</p></div><span>Opiniões de clientes</span></div>
+            <div id="perfil-review-vazio" class="perfil-avaliacoes-vazio" hidden><strong>Ainda não há avaliações</strong><p>Clientes poderão avaliar após a conclusão do atendimento.</p></div>
+            <div id="perfil-review-lista" class="perfil-review-lista"></div>
+            <div id="perfil-review-acesso" class="perfil-review-acesso" hidden></div>
+            <form id="perfil-review-form" class="perfil-review-form" hidden>
+              <h3>Avalie seu atendimento</h3>
+              <label for="perfil-review-agendamento">Atendimento concluído</label><select id="perfil-review-agendamento" required></select>
+              <label for="perfil-review-nota">Sua nota</label><select id="perfil-review-nota" required><option value="5">★★★★★ — Excelente</option><option value="4">★★★★☆ — Muito bom</option><option value="3">★★★☆☆ — Bom</option><option value="2">★★☆☆☆ — Regular</option><option value="1">★☆☆☆☆ — Ruim</option></select>
+              <label for="perfil-review-comentario">Comentário (opcional)</label><textarea id="perfil-review-comentario" maxlength="1000" rows="3" placeholder="Conte como foi sua experiência"></textarea>
+              <button class="perfil-cta" type="submit">Enviar avaliação</button><p id="perfil-review-status" role="status"></p>
+            </form>
+          </section>
+          <section class="perfil-secao" id="perfil-galeria-secao" aria-labelledby="perfil-galeria-titulo" hidden><h2 id="perfil-galeria-titulo">Fotos de trabalhos</h2><p>Trabalhos publicados por este profissional.</p><div class="perfil-galeria" id="perfil-galeria"></div></section>
+        </div>
+        <aside class="perfil-coluna-lateral">
+          <section class="perfil-lateral-card perfil-sobre-card"><h2>Sobre nós</h2><p id="perfil-descricao"></p><div class="perfil-contato" id="perfil-contato"></div></section>
+          <section class="perfil-lateral-card"><h2>Localização</h2><p id="perfil-endereco"></p><a id="perfil-mapa" class="perfil-link-mapa" target="_blank" rel="noopener">Ver no mapa ↗</a></section>
+          <section class="perfil-lateral-card"><h2>Horário de funcionamento</h2><div class="perfil-horarios" id="perfil-horarios"><p>Consulte os horários ao escolher um serviço.</p></div></section>
+          <a id="perfil-agendar-lateral" class="perfil-cta perfil-cta-lateral" href="#perfil-servicos">Agendar um serviço</a>
+        </aside>
+      </div>
+      <section class="perfil-recomendados" id="perfil-recomendados-secao" hidden><h2>Outros profissionais</h2><div id="perfil-recomendados" class="perfil-recomendados-grade"></div></section>
+    </div>
+  </main>
+  <footer class="rodape"><a href="../home/index.html" class="logo">Agenda<span>Uai</span></a><p>&copy; 2026 AgendaUai</p></footer>
+  <script src="../shared/agenda-uai-api.js"></script><script src="perfil-publico.js"></script>
+</body>
+</html>

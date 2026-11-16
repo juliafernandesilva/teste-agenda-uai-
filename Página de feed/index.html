@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgendaUai — Profissionais e serviços</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../shared/agenda-uai-theme.css">
+</head>
+<body data-categoria-inicial="">
+  <header class="cabecalho">
+    <a href="../home/index.html" class="logo" aria-label="AgendaUai — página inicial">Agenda<span>Uai</span></a>
+    <nav class="menu" aria-label="Navegação principal">
+      <a href="../home/index.html">Início</a>
+      <a href="#profissionais">Profissionais</a>
+      <a href="../home/index.html#estabelecimentos">Para profissionais</a>
+      <a class="menu__cta" href="../login%20e%20cadastro/login1510.html">Entrar</a>
+    </nav>
+  </header>
+  <main>
+    <section class="apresentacao">
+      <span class="etiqueta">AGENDAUAI · SERVIÇOS PERTO DE VOCÊ</span>
+      <h1>Encontre o profissional ideal para você</h1>
+      <p>Explore diferentes tipos de serviço, compare estabelecimentos e escolha um horário com facilidade.</p>
+    </section>
+    <section class="secao-profissionais" id="profissionais">
+      <div class="titulo-secao">
+        <div>
+          <h2 id="titulo-resultados">Profissionais no AgendaUai</h2>
+          <p>Escolha uma categoria ou pesquise por serviço, estabelecimento ou cidade.</p>
+        </div>
+        <span class="contador" id="contador-profissionais" aria-live="polite">Carregando…</span>
+      </div>
+      <div class="feed-filtros">
+        <label class="feed-filtro" for="filtro-categoria">
+          <span>Tipo de profissional</span>
+          <select id="filtro-categoria" name="categoria">
+            <option value="">Todas as categorias</option>
+          </select>
+        </label>
+        <label class="feed-filtro" for="filtro-busca">
+          <span>Buscar</span>
+          <input id="filtro-busca" type="search" placeholder="Nome, serviço ou cidade" autocomplete="off">
+        </label>
+      </div>
+      <p id="feed-categoria-aviso" class="feed-mensagem" role="status" hidden>Não há categorias ativas no catálogo JSON. Confira data/catalogo.json.</p>
+      <p id="feed-mensagem" class="feed-mensagem" role="status" aria-live="polite">Carregando profissionais…</p>
+      <div class="lista-profissionais" id="lista-profissionais" aria-live="polite"></div>
+    </section>
+  </main>
+  <footer class="rodape">
+    <a href="../home/index.html" class="logo">Agenda<span>Uai</span></a>
+    <p>&copy; 2026 AgendaUai — Projeto acadêmico, curso de Análise e Desenvolvimento de Sistemas, PUC Minas.</p>
+  </footer>
+  <script src="../shared/agenda-uai-api.js"></script>
+  <script src="feed.js"></script>
+</body>
+</html>

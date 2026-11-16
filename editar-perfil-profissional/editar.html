@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Define a codificação de caracteres e a adaptação para dispositivos móveis -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Define o título exibido na aba do navegador -->
+    <title>Editar perfil | AgendaUai</title>
+
+    <!-- Importa o arquivo CSS responsável pelo estilo da página -->
+    <link rel="stylesheet" href="editar.css">
+
+    <!-- Importa a fonte Poppins utilizada no projeto -->
+
+    <!-- Importa os ícones da biblioteca Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/agenda-uai-theme.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         CABEÇALHO DA PÁGINA
+         Contém o logotipo e o link para voltar ao painel
+    ========================================== -->
+    <header class="topo">
+
+        <!-- Logotipo do AgendaUai: ao clicar, volta ao painel -->
+        <a href="../home/index.html" class="logo">
+            <i class="fa-regular fa-calendar-check"></i>
+            Agenda<span>Uai</span>
+        </a>
+
+        <!-- Link para retornar à página principal do profissional -->
+        <a href="../painel do profissional/index.html" class="voltar">
+            <i class="fa-solid fa-arrow-left"></i>
+            Voltar ao painel
+        </a>
+
+    </header>
+
+    <!-- =========================================
+         CONTEÚDO PRINCIPAL
+         Apresenta o título e o formulário de edição
+    ========================================== -->
+    <main class="container">
+
+        <!-- Título e explicação da página -->
+        <section class="introducao">
+            <span class="etiqueta">MEU ESTABELECIMENTO</span>
+            <h1>Editar perfil</h1>
+            <p>Personalize as informações que representam sua loja no AgendaUai.</p>
+        </section>
+
+        <!-- Formulário que reúne os dados do estabelecimento -->
+        <form id="formPerfil">
+
+            <!-- =========================================
+                 SEÇÃO 1: INFORMAÇÕES DO ESTABELECIMENTO
+            ========================================== -->
+            <section class="card">
+
+                <!-- Título e descrição da seção -->
+                <div class="titulo-card">
+                    <i class="fa-solid fa-store"></i>
+
+                    <div>
+                        <h2>Informações do estabelecimento</h2>
+                        <p>Como seus clientes vão conhecer sua loja.</p>
+                    </div>
+                </div>
+
+                <!-- Campo para informar o nome da loja -->
+                <label for="nomeLoja">Nome da loja *</label>
+                <input
+                    id="nomeLoja"
+                    name="nomeLoja"
+                    type="text"
+                    placeholder="Ex.: Studio Ana Beleza"
+                    required
+                    maxlength="100"
+                >
+
+                <!-- Campo para escrever a descrição exibida no cabeçalho -->
+                <label for="descricao">Descrição do cabeçalho *</label>
+                <textarea
+                    id="descricao"
+                    name="descricao"
+                    rows="3"
+                    placeholder="Conte um pouco sobre sua loja e os serviços oferecidos."
+                    required
+                    maxlength="500"
+                ></textarea>
+
+                <!-- Orientação sobre a finalidade da descrição -->
+                <small>Essa descrição aparecerá junto ao nome do estabelecimento.</small>
+
+                <!-- Campo para selecionar uma foto ou logotipo -->
+                <label for="fotoLoja">Foto ou logotipo da loja</label>
+
+                <div class="foto-area">
+
+                    <!-- Área de pré-visualização da imagem selecionada -->
+                    <div class="preview">
+
+                        <!-- A imagem será exibida pelo JavaScript após a seleção -->
+                        <img
+                            id="previewFoto"
+                            alt="Prévia da foto da loja"
+                            hidden
+                        >
+
+                        <!-- Ícone mostrado enquanto não houver uma foto -->
+                        <i id="iconeFoto" class="fa-solid fa-camera"></i>
+                    </div>
+
+                    <!-- Orientações e seletor de arquivo da imagem -->
+                    <div class="foto-info">
+                        <strong>Imagem do estabelecimento</strong>
+                        <p>Escolha uma foto para identificar sua loja.</p>
+
+                        <!-- Permite selecionar arquivos de imagem do dispositivo -->
+                        <input
+                            id="fotoLoja"
+                            type="file"
+                            accept="image/*"
+                        >
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- =========================================
+                 SEÇÃO 2: CONTATO
+            ========================================== -->
+            <section class="card">
+
+                <!-- Título e descrição da seção -->
+                <div class="titulo-card">
+                    <i class="fa-solid fa-address-card"></i>
+
+                    <div>
+                        <h2>Contato</h2>
+                        <p>Facilite o contato dos seus clientes.</p>
+                    </div>
+                </div>
+
+                <!-- Campo para telefone ou WhatsApp comercial -->
+                <label for="telefone">Telefone ou WhatsApp</label>
+                <input
+                    id="telefone"
+                    name="telefone"
+                    type="tel"
+                    placeholder="(31) 99999-9999"
+                >
+
+                <!-- Campo para o e-mail comercial do estabelecimento -->
+                <label for="email">E-mail comercial</label>
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="contato@sualoja.com"
+                >
+
+                </div>
+            </section>
+
+            <!-- =========================================
+                 BOTÕES DE AÇÃO DO FORMULÁRIO
+            ========================================== -->
+            <div class="acoes">
+
+                <!-- Cancela a edição e retorna ao painel -->
+                <a href="../painel do profissional/index.html" class="botao cancelar">
+                    Cancelar
+                </a>
+
+                <!-- Envia o formulário para o JavaScript salvar os dados -->
+                <button type="submit" class="botao salvar">
+                    <i class="fa-solid fa-check"></i>
+                    Salvar alterações
+                </button>
+
+            </div>
+
+            <!-- Área onde o JavaScript informa se os dados foram salvos -->
+            <p id="mensagem" role="status" aria-live="polite"></p>
+
+        </form>
+    </main>
+
+    <!-- Importa o JavaScript responsável pela prévia da foto e pelo salvamento -->
+    <script src="editar.js"></script>
+
+</body>
+</html>
+

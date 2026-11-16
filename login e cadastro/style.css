@@ -1,0 +1,160 @@
+/* as cores do trem, claro e escuro */
+:root{--azul:#1F4E7A;--vermelho:#C1272D;--verde:#5FBF87;--borda:#E1E5E1;--texto:#1d2b3a;--bg:#F6F7F5;--card:#fff;--titulo:#1F4E7A;--mudo:#6B7370;--lado1:#e8f1f9;--lado2:#d5e6f5;--rodape:#1F4E7A;--sombra:rgba(32,80,127,.08)}
+:root[data-tema=dark]{--borda:#3a3a3a;--texto:#ececec;--bg:#161616;--card:#222;--titulo:#f2f2f2;--mudo:#a8a8a8;--lado1:#2e2e2e;--lado2:#262626;--rodape:#101010;--sombra:rgba(0,0,0,.5)}
+body,header,.card,input,footer,.lado{transition:background .3s,color .3s,border-color .3s}
+*{box-sizing:border-box;margin:0}
+body{font-family:Poppins,system-ui,sans-serif;color:var(--texto);background:var(--bg);min-height:100vh;display:flex;flex-direction:column}
+header{background:var(--card);border-bottom:1px solid var(--borda);padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.tema{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--borda);background:var(--card);color:var(--titulo);cursor:pointer;display:grid;place-items:center;transition:.2s}
+.tema:hover{border-color:var(--titulo)}
+.tema svg{width:20px;height:20px}
+.tema .sol{display:none}
+:root[data-tema=dark] .tema .sol{display:block}
+:root[data-tema=dark] .tema .lua{display:none}
+.logo{font-weight:600;font-size:22px;color:var(--titulo);text-decoration:none}
+.logo b{color:var(--verde);font-weight:600}
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:32px 16px}
+.card{display:grid;grid-template-columns:1fr 1fr;max-width:920px;width:100%;background:var(--card);border:1px solid var(--borda);border-radius:20px;overflow:hidden;box-shadow:0 10px 30px var(--sombra)}
+.form{padding:44px 40px}
+h1{color:var(--titulo);font-size:28px;margin-bottom:6px}
+.sub{color:var(--mudo);font-size:14px;margin-bottom:26px}
+label{display:block;font-size:13px;font-weight:500;margin:16px 0 6px}
+.campo{position:relative}
+input{width:100%;padding:13px 14px;border:1.5px solid var(--borda);border-radius:10px;font:inherit;font-size:14px;outline:none;transition:.2s;background:var(--card);color:var(--texto);-webkit-text-fill-color:var(--texto);caret-color:var(--texto);color-scheme:light}
+:root[data-tema=dark] input{color-scheme:dark}
+input::placeholder{color:var(--mudo);opacity:1;-webkit-text-fill-color:var(--mudo)}
+input:-webkit-autofill,input:-webkit-autofill:hover,input:-webkit-autofill:focus,input:-webkit-autofill:active{ -webkit-text-fill-color:var(--texto)!important;caret-color:var(--texto);-webkit-box-shadow:0 0 0 1000px var(--card) inset!important;box-shadow:0 0 0 1000px var(--card) inset!important;transition:background-color 9999s ease-out 0s}
+input:focus{border-color:var(--titulo);box-shadow:0 0 0 3px rgba(32,80,127,.12)}
+input.erro{border-color:var(--vermelho)}
+.ver{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--titulo);font:500 12px Poppins;cursor:pointer}
+.msg{color:var(--vermelho);font-size:13px;margin-top:6px;min-height:18px}
+.msg.ok{color:var(--verde)}
+.esq{display:block;text-align:right;font-size:13px;color:var(--titulo);margin:8px 0 18px;text-decoration:none}
+button.entrar{width:100%;padding:14px;border:0;border-radius:999px;background:var(--vermelho);color:#fff;font:600 15px Poppins;cursor:pointer;transition:.2s}
+button.entrar:hover{filter:brightness(.92)}
+.criar{text-align:center;font-size:13px;margin-top:20px;color:var(--mudo)}
+.criar a{color:var(--vermelho);font-weight:600;text-decoration:none}
+.lado{background:linear-gradient(160deg,var(--lado1),var(--lado2));display:flex;align-items:flex-end;justify-content:center;padding-top:24px}
+.lado img{max-height:430px;max-width:90%;object-fit:contain;transition:opacity .25s,transform .25s}
+.lado img.troca{opacity:0;transform:scale(.96)}
+footer{background:var(--rodape);color:#cfe0f0;text-align:center;font-size:12px;padding:16px}
+form[hidden],div[hidden]{display:none}
+/* link dentro do aviso, tipo redefinir sua senha */
+.msg a{color:var(--titulo);font-weight:600;text-decoration:underline;cursor:pointer}
+/* redefinir sem o Chico e cartão apertadinho */
+.card.sem-chico{grid-template-columns:1fr;max-width:480px}
+.card.sem-chico .lado{display:none}
+/* os 6 quadradinhos do código */
+.codigo{display:flex;gap:10px;margin:14px 0 6px}
+.codigo input{flex:1;min-width:0;height:58px;padding:0;text-align:center;font-size:22px;font-weight:600}
+/* espaço pro Mostrar não ficar por cima do texto */
+.campo:has(.ver) input{padding-right:78px}
+/* lista de regra da senha */
+.regras{list-style:none;padding:0;margin:8px 0 0;font-size:12px;color:var(--mudo)}
+.regras li{position:relative;padding-left:20px;margin-top:3px}
+.regras li::before{content:"○";position:absolute;left:0}
+.regras li.ok{color:var(--verde)}
+.regras li.ok::before{content:"✓"}
+.regras li.falha{color:var(--vermelho)}
+@media(max-width:760px){.card{grid-template-columns:1fr}.lado{order:-1;max-height:220px;overflow:hidden}.lado img{max-height:220px}.form{padding:30px 24px}}
+
+/* botão de idiomaa*/
+.acoes{display:flex;align-items:center;gap:10px}
+.idioma{position:relative}
+.idioma>button{height:42px;padding:0 14px;border-radius:999px;border:1.5px solid var(--borda);background:var(--card);color:var(--titulo);font:600 13px Poppins,sans-serif;cursor:pointer;display:flex;align-items:center;gap:8px;transition:.2s}
+.idioma>button:hover{border-color:var(--titulo)}
+.idioma svg{width:18px;height:18px}
+.idioma ul{position:absolute;right:0;top:50px;list-style:none;padding:6px;margin:0;min-width:220px;background:var(--card);border:1px solid var(--borda);border-radius:14px;box-shadow:0 10px 30px var(--sombra);z-index:10}
+.idioma ul[hidden]{display:none}
+.idioma li button{width:100%;display:flex;justify-content:space-between;text-align:left;background:none;border:0;padding:10px 12px;border-radius:8px;font:500 14px Poppins,sans-serif;color:var(--texto);cursor:pointer}
+.idioma li button:hover{background:var(--bg)}
+.idioma li button[aria-checked=true]{color:var(--titulo);font-weight:600}
+.idioma li button[aria-checked=true]::after{content:"✓"}
+/* contratante ou prestador */
+fieldset.tipo{border:0;padding:0;margin:0 0 4px}
+fieldset.tipo legend{font-size:13px;font-weight:500;padding:0;margin-bottom:2px}
+.opcao{display:flex;align-items:center;gap:10px;padding:12px 14px;margin-top:8px;border:1.5px solid var(--borda);border-radius:10px;font-size:14px;cursor:pointer;transition:.2s}
+.opcao:hover{border-color:var(--titulo)}
+.opcao input{width:18px;height:18px;padding:0;margin:0;flex:none;accent-color:var(--vermelho)}
+.opcao:has(input:checked){border-color:var(--vermelho);background:rgba(198,40,51,.07)}
+/* CPF e CNPJ */
+.chip{display:inline-block;margin-left:8px;padding:1px 9px;border-radius:999px;background:var(--verde);color:#fff;font-size:11px;font-weight:600;vertical-align:middle}
+.chip:empty{display:none}
+.dica{font-size:12px;color:var(--mudo);margin-top:6px}
+
+/* criar conta apertadinho pra caber na tela */
+#fc{padding:26px 40px}
+#fc h1{font-size:24px;margin-bottom:2px}
+#fc .sub{margin-bottom:10px}
+#fc label{margin:8px 0 4px}
+#fc input{padding:10px 14px}
+#fc .msg{min-height:0;margin-top:3px;font-size:12px}
+#fc .msg:empty{display:none}
+#fc fieldset.tipo{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0}
+#fc fieldset.tipo legend{grid-column:1/-1;margin-bottom:0}
+#fc .opcao{margin-top:0;padding:9px 12px;font-size:13px}
+#fc .dica{display:block;margin-top:4px}
+#fc .entrar{padding:12px;margin-top:6px}
+#fc .criar{margin-top:12px}
+#msgSenhaC2{margin-bottom:0!important}
+@media(max-width:760px){#fc{padding:22px 20px}#fc fieldset.tipo{grid-template-columns:1fr}}
+main{padding:14px 16px}
+.card{max-width:1040px}
+/* =========================
+   ACEITE
+========================= */
+
+.aceite {
+
+    margin: 25px 0;
+}
+
+
+.aceite label {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 9px;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color: var(--texto);
+
+    cursor: pointer;
+}
+
+
+.aceite input {
+
+    width: 16px;
+
+    height: 16px;
+
+    margin-top: 3px;
+
+    accent-color: #287b5c;
+
+    flex-shrink: 0;
+}
+
+
+.aceite a {
+
+    color: var(--titulo);
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+.aceite a:hover {
+
+    color: #C1272D;
+
+    text-decoration: underline;
+}

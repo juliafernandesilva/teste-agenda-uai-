@@ -1,0 +1,282 @@
+
+:root {
+    --azul: #1F4E7A;
+    --azul-claro: #eaf5ff;
+    --verde: #5FBF87;
+    --texto: #243b53;
+    --cinza: #6B7370;
+    --fundo: #F6F7F5;
+    --borda: #E1E5E1;
+    --branco: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    min-height: 100vh;
+}
+
+.topo {
+    height: 78px;
+    background: var(--branco);
+    border-bottom: 1px solid var(--borda);
+    padding: 0 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    text-decoration: none;
+    color: var(--azul);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.logo i {
+    margin-right: 8px;
+}
+
+.logo span {
+    color: var(--verde);
+}
+
+.voltar {
+    color: var(--azul);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.container {
+    width: min(900px, 92%);
+    margin: 38px auto;
+}
+
+.introducao {
+    margin-bottom: 25px;
+}
+
+.etiqueta {
+    color: var(--verde);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.introducao h1 {
+    color: var(--azul);
+    font-size: 30px;
+    margin: 7px 0;
+}
+
+.introducao p,
+.titulo-card p {
+    color: var(--cinza);
+    font-size: 14px;
+}
+
+.card {
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 15px;
+    padding: 28px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(28, 59, 99, 0.04);
+}
+
+.titulo-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 25px;
+}
+
+.titulo-card > i {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    background: var(--azul-claro);
+    color: var(--azul);
+    border-radius: 12px;
+    font-size: 19px;
+}
+
+.titulo-card h2 {
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin: 18px 0 7px;
+}
+
+input:not([type="file"]),
+textarea {
+    width: 100%;
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    padding: 12px 14px;
+    font: inherit;
+    font-size: 14px;
+    color: var(--texto);
+    background: #fff;
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(40, 174, 123, 0.10);
+}
+
+textarea {
+    resize: vertical;
+}
+
+small {
+    display: block;
+    color: var(--cinza);
+    font-size: 11px;
+    margin-top: 6px;
+}
+
+.foto-area {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px;
+    background: #f8fafc;
+    border: 1px dashed #D3DCD5;
+    border-radius: 12px;
+}
+
+.preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--azul-claro);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    flex-shrink: 0;
+    color: var(--azul);
+    font-size: 25px;
+}
+
+.preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.foto-info p {
+    color: var(--cinza);
+    font-size: 12px;
+    margin: 5px 0 12px;
+}
+
+.foto-info input {
+    max-width: 100%;
+    font-size: 12px;
+}
+
+.duas-colunas {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 16px;
+}
+
+.acoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.botao {
+    min-height: 46px;
+    padding: 12px 22px;
+    border-radius: 9px;
+    font: 600 13px "Poppins", sans-serif;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.cancelar {
+    border: 1px solid var(--borda);
+    background: white;
+    color: var(--texto);
+}
+
+.salvar {
+    border: none;
+    background: var(--verde);
+    color: white;
+}
+
+.salvar:hover {
+    filter: brightness(0.95);
+}
+
+#mensagem {
+    margin-top: 15px;
+    font-size: 13px;
+    text-align: right;
+    color: var(--verde);
+}
+
+@media (max-width: 600px) {
+    .topo {
+        padding: 0 4%;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .voltar {
+        font-size: 12px;
+    }
+
+    .container {
+        margin: 25px auto;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .foto-area {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .duas-colunas {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .acoes {
+        flex-direction: column-reverse;
+    }
+
+    .botao {
+        width: 100%;
+    }
+}
