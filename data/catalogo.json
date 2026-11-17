@@ -1,369 +1,747 @@
 {
   "schemaVersion": 1,
-  "origem": "Exportação pública do catálogo AgendaUai",
-  "exportadoEm": "2026-11-11",
+  "origem": "Catálogo público de demonstração AgendaUai",
+  "exportadoEm": "2026-11-16",
   "lojas": [
     {
       "id": "82516e4e-9fd9-438d-884a-6dd9de0c0449",
       "nome": "Leonardo César",
-      "descricao": "",
+      "descricao": "Barbearia com atendimento personalizado, cortes masculinos e cuidados com a barba. Agende seu horário e tenha um atendimento com atenção aos detalhes.",
       "logoUrl": "/uploads/loja-82516e4e-9fd9-438d-884a-6dd9de0c0449.png",
+      "fotoUrl": "/uploads/loja-perfil-ana.jpg",
       "endereco": {
-        "bairro": "Savassi",
-        "cidade": "BH",
+        "bairro": "",
+        "cidade": "Belo Horizonte",
         "estado": "MG",
-        "latitude": -19.93725,
-        "longitude": -43.93558
+        "latitude": -19.9246,
+        "longitude": -43.9381
       },
+      "precisaoCoordenadas": "aleatória para demonstração",
       "categorias": [
         {
           "id": "3b941fce-26a4-4d87-8820-a212192f4649",
           "nome": "Barbearia",
-          "slug": "barbearia"
+          "slug": "barbearia",
+          "descricao": "Corte de cabelo, barba e cuidados masculinos."
         }
       ],
-      "publicosAlvo": [
-        {
-          "id": "1eb565f8-0252-4ebb-981e-a433b0803ee7",
-          "nome": "Crianças",
-          "slug": "criancas"
-        },
-        {
-          "id": "ac9ee8a9-74d2-4cbc-90a7-322de7fe1725",
-          "nome": "Jovens adultos",
-          "slug": "jovens-adultos"
-        },
-        {
-          "id": "cf27c9df-2814-46aa-9883-f59ab4203e23",
-          "nome": "Idosos",
-          "slug": "idosos"
-        },
-        {
-          "id": "0ccfc7a2-3c31-4fba-abca-45a0f41c4e2b",
-          "nome": "Homens",
-          "slug": "homens"
-        },
-        {
-          "id": "19da182e-2d65-4e03-8c02-1e4d67dd1e17",
-          "nome": "Famílias",
-          "slug": "familias"
-        },
-        {
-          "id": "6681c7c3-99d5-417b-979d-71900d4f99c7",
-          "nome": "Casais",
-          "slug": "casais"
-        },
-        {
-          "id": "b2a6b3f1-3b10-4c85-b1da-7718ffc9db62",
-          "nome": "Gestantes",
-          "slug": "gestantes"
-        }
-      ],
+      "publicosAlvo": [],
       "servicos": [
         {
-          "id": "9b62844a-9b6c-42ab-b485-6fcaf33d898c",
-          "nome": "unha",
-          "descricao": null,
-          "preco": 20.0,
-          "duracaoMinutos": 43
+          "id": "362ce3c0-ade7-493f-af0f-37d3b83031c0",
+          "nome": "Corte masculino",
+          "descricao": "Corte de cabelo com acabamento personalizado.",
+          "preco": 50,
+          "duracaoMinutos": 40
         },
         {
-          "id": "d2329aa8-aacb-4d56-bc1a-bb44f3e4f2d5",
-          "nome": "ççççç",
-          "descricao": "",
-          "preco": 88.0,
-          "duracaoMinutos": 88
+          "id": "8af73bd9-4c58-416a-809c-45babb4bfdd1",
+          "nome": "Barba completa",
+          "descricao": "Aparar, desenhar e finalizar a barba.",
+          "preco": 40,
+          "duracaoMinutos": 30
         }
       ],
-      "redesSociais": [
-        {
-          "plataforma": "instagram",
-          "url": "https://www.instagram.com/kkkkkkkkk/"
-        }
-      ],
+      "redesSociais": [],
       "horariosSemanais": [
         {
           "diaSemana": 1,
-          "inicio": "14:00",
-          "fim": "16:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 2,
-          "inicio": "14:00",
-          "fim": "16:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 3,
-          "inicio": "14:00",
-          "fim": "16:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 4,
-          "inicio": "14:00",
-          "fim": "16:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 5,
-          "inicio": "14:00",
-          "fim": "16:00"
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 6,
+          "inicio": "09:00",
+          "fim": "13:00"
         }
       ],
-      "excecoes": [],
-      "precisaoCoordenadas": "Centro do bairro (aproximado)",
-      "fonteCoordenadas": "https://mapcarta.com/N352706912"
+      "excecoes": []
     },
     {
       "id": "f70799bb-9361-4ae3-9a95-83e5ab85f844",
       "nome": "Petshop Companheiros",
-      "descricao": "Bem-vindo(a) ao Petshop Companheiros! Somos um espaço dedicado ao carinho, cuidado e bem-estar do seu melhor amigo. Oferecemos serviços completos de banho, tosa e atendimento especializado para garantir que seu pet fique lindo, saudável e feliz.",
+      "descricao": "Espaço dedicado ao carinho, cuidado e bem-estar dos pets, com banho e serviços de higiene para deixar seu companheiro confortável e bem cuidado.",
       "logoUrl": "/uploads/loja-f70799bb-9361-4ae3-9a95-83e5ab85f844.webp",
+      "fotoUrl": "/uploads/pet shop.png",
       "endereco": {
-        "bairro": "Park Dona Gumercinda Martins",
-        "cidade": "Nova Serrana",
+        "bairro": "",
+        "cidade": "Contagem",
         "estado": "MG",
-        "latitude": -19.8691,
-        "longitude": -44.99893
+        "latitude": -19.9141,
+        "longitude": -44.0735
       },
+      "precisaoCoordenadas": "aleatória para demonstração",
       "categorias": [
         {
           "id": "8c3c7833-020e-4359-bdb4-fc749f5eba1a",
           "nome": "Pet shop",
-          "slug": "pet-shop"
+          "slug": "pet-shop",
+          "descricao": "Serviços e cuidados para animais de estimação."
         }
       ],
-      "publicosAlvo": [
-        {
-          "id": "2bb170d8-aaef-4d61-916a-602727132ee9",
-          "nome": "Donos de pets",
-          "slug": "donos-de-pets"
-        }
-      ],
+      "publicosAlvo": [],
       "servicos": [
         {
-          "id": "e867e888-94d0-4e91-bc97-f67aecdea960",
-          "nome": "Banho",
-          "descricao": null,
-          "preco": 40.0,
-          "duracaoMinutos": 60
+          "id": "4d8ecf25-16d6-4ef5-9809-5842710de35c",
+          "nome": "Banho e tosa",
+          "descricao": "Banho, secagem e tosa higiênica para cães de pequeno porte.",
+          "preco": 80,
+          "duracaoMinutos": 90
+        },
+        {
+          "id": "bf4df2c5-4007-4e21-94d7-959ed4359e33",
+          "nome": "Consulta veterinária",
+          "descricao": "Avaliação clínica geral para cães e gatos.",
+          "preco": 150,
+          "duracaoMinutos": 45
         }
       ],
       "redesSociais": [],
       "horariosSemanais": [
         {
           "diaSemana": 1,
-          "inicio": "07:00",
-          "fim": "17:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 2,
-          "inicio": "07:00",
-          "fim": "17:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 3,
-          "inicio": "07:00",
-          "fim": "17:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 4,
-          "inicio": "07:00",
-          "fim": "17:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 5,
-          "inicio": "07:00",
-          "fim": "17:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 6,
-          "inicio": "07:00",
-          "fim": "12:00"
+          "inicio": "09:00",
+          "fim": "13:00"
         }
       ],
-      "excecoes": [],
-      "precisaoCoordenadas": "Centro do bairro (aproximado)",
-      "fonteCoordenadas": "https://mapcarta.com/pt/N4714418087"
+      "excecoes": []
     },
     {
       "id": "b481602d-13b9-4cfd-8417-d04ff35517d5",
       "nome": "Glanz Estética Automotiva",
-      "descricao": "Sejam bem-vindos à Glanz Estética Automotiva! Somos especialistas em cuidar do seu veículo com alto padrão de qualidade. Oferecemos serviços completos de lavagem detalhada, polimento técnico, higienização interna e proteção de pintura para garantir que seu carro volte a brilhar como novo.",
+      "descricao": "Estética automotiva com lavagem completa e higienização interna. Cuidado detalhado para manter seu veículo limpo e bem conservado.",
       "logoUrl": "/uploads/loja-b481602d-13b9-4cfd-8417-d04ff35517d5.png",
+      "fotoUrl": "/uploads/loja-perfil-glanz.webp",
       "endereco": {
-        "bairro": "Jardim Padre Lauro",
-        "cidade": "Nova Serrana",
+        "bairro": "",
+        "cidade": "Betim",
         "estado": "MG",
-        "latitude": -19.8766,
-        "longitude": -45.00657
+        "latitude": -19.9649,
+        "longitude": -44.1962
       },
+      "precisaoCoordenadas": "aleatória para demonstração",
       "categorias": [
         {
           "id": "2a2ebc43-3d21-4ae5-a3b2-6331a21bfe97",
           "nome": "Lava-jato",
-          "slug": "lava-jato"
+          "slug": "lava-jato",
+          "descricao": "Lavagem e estética automotiva."
         }
       ],
-      "publicosAlvo": [
-        {
-          "id": "2bb170d8-aaef-4d61-916a-602727132ee9",
-          "nome": "Donos de pets",
-          "slug": "donos-de-pets"
-        }
-      ],
+      "publicosAlvo": [],
       "servicos": [
         {
-          "id": "bd06b7a7-47e3-4b97-aaed-163c196e631b",
-          "nome": "Banho",
-          "descricao": null,
-          "preco": 40.0,
+          "id": "a52ba404-1195-45bb-afbf-45f30154787a",
+          "nome": "Lavagem completa",
+          "descricao": "Lavagem externa, aspiração e limpeza básica do interior.",
+          "preco": 80,
           "duracaoMinutos": 60
+        },
+        {
+          "id": "066fefbe-6589-4d94-8416-afc95cec6f0c",
+          "nome": "Higienização interna completa",
+          "descricao": "Limpeza detalhada de bancos, carpetes, painel e porta-malas.",
+          "preco": 280,
+          "duracaoMinutos": 180
         }
       ],
       "redesSociais": [],
       "horariosSemanais": [
         {
           "diaSemana": 1,
-          "inicio": "07:00",
-          "fim": "19:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 2,
-          "inicio": "07:00",
-          "fim": "19:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 3,
-          "inicio": "07:00",
-          "fim": "19:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 4,
-          "inicio": "07:00",
-          "fim": "19:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 5,
-          "inicio": "07:00",
-          "fim": "19:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 6,
-          "inicio": "07:00",
-          "fim": "11:00"
+          "inicio": "09:00",
+          "fim": "13:00"
         }
       ],
-      "excecoes": [],
-      "precisaoCoordenadas": "Centro do bairro (aproximado)",
-      "fonteCoordenadas": "https://mapcarta.com/pt/N4714418085"
+      "excecoes": []
     },
     {
       "id": "0e324874-b33d-43b7-875b-47389456a646",
       "nome": "LUMINA STUDIO",
-      "descricao": "Somos um espaço dedicado à sua beleza e bem-estar. Oferecemos serviços especializados em cuidados com os cabelos, unhas e estética, contando com profissionais qualificados para garantir que você tenha um momento relaxante e saia renovado(a).",
+      "descricao": "Studio de beleza e bem-estar com serviços de manicure e pedicure, em um ambiente preparado para proporcionar cuidado e conforto.",
       "logoUrl": "/uploads/loja-0e324874-b33d-43b7-875b-47389456a646.webp",
+      "fotoUrl": "/uploads/loja-perfil-lumina.jpg",
       "endereco": {
-        "bairro": "Jardim Padre Lauro",
-        "cidade": "Nova Serrana",
+        "bairro": "",
+        "cidade": "Belo Horizonte",
         "estado": "MG",
-        "latitude": -19.8766,
-        "longitude": -45.00657
+        "latitude": -19.9342,
+        "longitude": -43.9218
       },
+      "precisaoCoordenadas": "aleatória para demonstração",
       "categorias": [
         {
           "id": "4cad18d1-f4ee-4c1a-9fec-a3ccb7034d2e",
           "nome": "Clínica de estética",
-          "slug": "clinica-de-estetica"
+          "slug": "clinica-de-estetica",
+          "descricao": "Tratamentos estéticos e de bem-estar."
         }
       ],
-      "publicosAlvo": [
-        {
-          "id": "c0827037-7dce-4bf9-88ff-d258c018e2e6",
-          "nome": "Adolescentes",
-          "slug": "adolescentes"
-        },
-        {
-          "id": "ac9ee8a9-74d2-4cbc-90a7-322de7fe1725",
-          "nome": "Jovens adultos",
-          "slug": "jovens-adultos"
-        },
-        {
-          "id": "a0b297ca-1745-4b6e-804a-19fbe84b13eb",
-          "nome": "Adultos",
-          "slug": "adultos"
-        },
-        {
-          "id": "cf27c9df-2814-46aa-9883-f59ab4203e23",
-          "nome": "Idosos",
-          "slug": "idosos"
-        },
-        {
-          "id": "1ba2aabb-c4c1-491f-add1-a09295d700fd",
-          "nome": "Mulheres",
-          "slug": "mulheres"
-        },
-        {
-          "id": "0ccfc7a2-3c31-4fba-abca-45a0f41c4e2b",
-          "nome": "Homens",
-          "slug": "homens"
-        }
-      ],
+      "publicosAlvo": [],
       "servicos": [
         {
-          "id": "2400cf69-78b1-469e-8f38-8ed8e50cc143",
-          "nome": "Manicure",
-          "descricao": null,
-          "preco": 45.0,
-          "duracaoMinutos": 40
+          "id": "a5b83fa8-281d-424e-813c-96337a6005e5",
+          "nome": "Limpeza de pele facial",
+          "descricao": "Higienização, extração e máscara calmante.",
+          "preco": 150,
+          "duracaoMinutos": 75
         },
         {
-          "id": "5b8959af-20fd-428b-a3d2-cf83c8237a33",
-          "nome": "pedicure",
-          "descricao": "Cutilagem, esmaltação e spa dos pés",
-          "preco": 45.0,
-          "duracaoMinutos": 50
+          "id": "33fa6348-47e4-43c9-8df8-1ebd478c54b8",
+          "nome": "Design de sobrancelhas",
+          "descricao": "Modelagem e acabamento das sobrancelhas.",
+          "preco": 50,
+          "duracaoMinutos": 30
         }
       ],
-      "redesSociais": [
-        {
-          "plataforma": "instagram",
-          "url": "https://www.instagram.com/lumina_studio"
-        }
-      ],
+      "redesSociais": [],
       "horariosSemanais": [
         {
           "diaSemana": 1,
-          "inicio": "08:00",
-          "fim": "19:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 2,
-          "inicio": "08:00",
-          "fim": "19:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 3,
-          "inicio": "08:00",
-          "fim": "19:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 4,
-          "inicio": "08:00",
-          "fim": "19:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 5,
-          "inicio": "08:00",
-          "fim": "19:00"
+          "inicio": "09:00",
+          "fim": "18:00"
         },
         {
           "diaSemana": 6,
-          "inicio": "08:00",
-          "fim": "19:00"
+          "inicio": "09:00",
+          "fim": "13:00"
         }
       ],
-      "excecoes": [],
-      "precisaoCoordenadas": "Centro do bairro (aproximado)",
-      "fonteCoordenadas": "https://mapcarta.com/pt/N4714418085"
+      "excecoes": []
+    },
+    {
+      "id": "71e159d2-72b4-4b82-813f-398f36f092a4",
+      "nome": "Bruno Silva",
+      "descricao": "Atendimento de barbearia com serviços de barba e cuidado pessoal, realizado com horário agendado para oferecer mais comodidade.",
+      "logoUrl": "/uploads/7815019e-bfb2-4e69-85f0-b8d6eda68034-9c767838-b0b5-421b-9c49-3a8617cb5305.webp",
+      "fotoUrl": "/uploads/Barbeiro.jpg",
+      "endereco": {
+        "bairro": "",
+        "cidade": "Contagem",
+        "estado": "MG",
+        "latitude": -19.9478,
+        "longitude": -44.0462
+      },
+      "precisaoCoordenadas": "aleatória para demonstração",
+      "categorias": [
+        {
+          "id": "3b941fce-26a4-4d87-8820-a212192f4649",
+          "nome": "Barbearia",
+          "slug": "barbearia",
+          "descricao": "Corte de cabelo, barba e cuidados masculinos."
+        }
+      ],
+      "publicosAlvo": [],
+      "servicos": [
+        {
+          "id": "4c64a4ed-5c10-4234-acd4-b0ba58776d3a",
+          "nome": "Corte masculino",
+          "descricao": "Corte de cabelo com acabamento personalizado.",
+          "preco": 50,
+          "duracaoMinutos": 40
+        },
+        {
+          "id": "97626f20-75fd-4ce0-ab82-f860984fb09d",
+          "nome": "Barba completa",
+          "descricao": "Aparar, desenhar e finalizar a barba.",
+          "preco": 40,
+          "duracaoMinutos": 30
+        }
+      ],
+      "redesSociais": [],
+      "horariosSemanais": [
+        {
+          "diaSemana": 1,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 2,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 3,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 4,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 5,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 6,
+          "inicio": "09:00",
+          "fim": "13:00"
+        }
+      ],
+      "excecoes": []
+    },
+    {
+      "id": "190831fc-ba77-4439-8736-101a3efd7003",
+      "nome": "Studio Bela Minas",
+      "descricao": "Studio de beleza com serviços de escova e hidratação. Atendimento personalizado para valorizar a beleza e a saúde dos cabelos.",
+      "logoUrl": "/uploads/Salão de beleza 2.jpg",
+      "fotoUrl": "/uploads/Salão de beleza 2.jpg",
+      "endereco": {
+        "bairro": "",
+        "cidade": "Belo Horizonte",
+        "estado": "MG",
+        "latitude": -19.9465,
+        "longitude": -43.9532
+      },
+      "precisaoCoordenadas": "aleatória para demonstração",
+      "categorias": [
+        {
+          "id": "472d1502-3e9d-43a3-b6f7-c258a7d9e8fb",
+          "nome": "Salão de beleza",
+          "slug": "salao-de-beleza",
+          "descricao": "Serviços de beleza e cuidados pessoais."
+        }
+      ],
+      "publicosAlvo": [],
+      "servicos": [
+        {
+          "id": "ee073e21-9110-4691-82d2-d69b56d51782",
+          "nome": "Escova e finalização",
+          "descricao": "Lavagem, escova e finalização dos cabelos.",
+          "preco": 70,
+          "duracaoMinutos": 60
+        },
+        {
+          "id": "d95bc15b-7cb4-4941-94f6-a54653385b86",
+          "nome": "Hidratação capilar",
+          "descricao": "Tratamento de hidratação com finalização simples.",
+          "preco": 100,
+          "duracaoMinutos": 75
+        }
+      ],
+      "redesSociais": [],
+      "horariosSemanais": [
+        {
+          "diaSemana": 1,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 2,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 3,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 4,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 5,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 6,
+          "inicio": "09:00",
+          "fim": "13:00"
+        }
+      ],
+      "excecoes": []
+    },
+    {
+      "id": "a1aea5e8-d71a-461a-ad9d-4d3f46d4292e",
+      "nome": "Pet Feliz Banho & Tosa",
+      "descricao": "Pet shop especializado em banho e cuidados de higiene para cães e gatos, com atenção ao conforto e ao bem-estar de cada animal.",
+      "logoUrl": "/uploads/loja-perfil-pet-feliz.jpg",
+      "fotoUrl": "/uploads/loja-perfil-pet-feliz.jpg",
+      "endereco": {
+        "bairro": "",
+        "cidade": "Contagem",
+        "estado": "MG",
+        "latitude": -19.9264,
+        "longitude": -44.0351
+      },
+      "precisaoCoordenadas": "aleatória para demonstração",
+      "categorias": [
+        {
+          "id": "8c3c7833-020e-4359-bdb4-fc749f5eba1a",
+          "nome": "Pet shop",
+          "slug": "pet-shop",
+          "descricao": "Serviços e cuidados para animais de estimação."
+        }
+      ],
+      "publicosAlvo": [],
+      "servicos": [
+        {
+          "id": "706e9209-0d45-40df-a8b7-a907d82cf88f",
+          "nome": "Banho e tosa",
+          "descricao": "Banho, secagem e tosa higiênica para cães de pequeno porte.",
+          "preco": 80,
+          "duracaoMinutos": 90
+        },
+        {
+          "id": "cb18e966-a760-48c5-b130-d7bc11223626",
+          "nome": "Consulta veterinária",
+          "descricao": "Avaliação clínica geral para cães e gatos.",
+          "preco": 150,
+          "duracaoMinutos": 45
+        }
+      ],
+      "redesSociais": [],
+      "horariosSemanais": [
+        {
+          "diaSemana": 1,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 2,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 3,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 4,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 5,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 6,
+          "inicio": "09:00",
+          "fim": "13:00"
+        }
+      ],
+      "excecoes": []
+    },
+    {
+      "id": "91ff948c-b57b-45fb-8fe0-392423d8368c",
+      "nome": "Lava-jato Brilho de Minas",
+      "descricao": "Lava-jato com lavagem completa e higienização interna. Cuidado caprichado para deixar seu veículo limpo por dentro e por fora.",
+      "logoUrl": "/uploads/loja-perfil-brilho-minas.jpg",
+      "fotoUrl": "/uploads/loja-perfil-brilho-minas.jpg",
+      "endereco": {
+        "bairro": "",
+        "cidade": "Betim",
+        "estado": "MG",
+        "latitude": -19.9504,
+        "longitude": -44.1799
+      },
+      "precisaoCoordenadas": "aleatória para demonstração",
+      "categorias": [
+        {
+          "id": "2a2ebc43-3d21-4ae5-a3b2-6331a21bfe97",
+          "nome": "Lava-jato",
+          "slug": "lava-jato",
+          "descricao": "Lavagem e estética automotiva."
+        }
+      ],
+      "publicosAlvo": [],
+      "servicos": [
+        {
+          "id": "d87ccc45-4e14-49fd-93ba-c1cb8de9fce6",
+          "nome": "Lavagem completa",
+          "descricao": "Lavagem externa, aspiração e limpeza básica do interior.",
+          "preco": 80,
+          "duracaoMinutos": 60
+        },
+        {
+          "id": "31cec0dd-0332-4a24-8e09-48d676cb01a9",
+          "nome": "Higienização interna completa",
+          "descricao": "Limpeza detalhada de bancos, carpetes, painel e porta-malas.",
+          "preco": 280,
+          "duracaoMinutos": 180
+        }
+      ],
+      "redesSociais": [],
+      "horariosSemanais": [
+        {
+          "diaSemana": 1,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 2,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 3,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 4,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 5,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 6,
+          "inicio": "09:00",
+          "fim": "13:00"
+        }
+      ],
+      "excecoes": []
+    },
+    {
+      "id": "25de7f12-5926-4462-80c2-c8f365cdb8d3",
+      "nome": "Essenza Clínica de Estética",
+      "descricao": "Clínica de estética com cuidados faciais e corporais, oferecendo tratamentos agendados em um ambiente tranquilo e acolhedor.",
+      "logoUrl": "/uploads/loja-perfil-essenza.jpg",
+      "fotoUrl": "/uploads/loja-perfil-essenza.jpg",
+      "endereco": {
+        "bairro": "",
+        "cidade": "Belo Horizonte",
+        "estado": "MG",
+        "latitude": -19.9148,
+        "longitude": -43.9496
+      },
+      "precisaoCoordenadas": "aleatória para demonstração",
+      "categorias": [
+        {
+          "id": "4cad18d1-f4ee-4c1a-9fec-a3ccb7034d2e",
+          "nome": "Clínica de estética",
+          "slug": "clinica-de-estetica",
+          "descricao": "Tratamentos estéticos e de bem-estar."
+        }
+      ],
+      "publicosAlvo": [],
+      "servicos": [
+        {
+          "id": "958c4651-3d5c-4dda-84a7-f3e35b125190",
+          "nome": "Limpeza de pele facial",
+          "descricao": "Higienização, extração e máscara calmante.",
+          "preco": 150,
+          "duracaoMinutos": 75
+        },
+        {
+          "id": "78ebdaef-c80d-4796-9f63-b63438a39871",
+          "nome": "Design de sobrancelhas",
+          "descricao": "Modelagem e acabamento das sobrancelhas.",
+          "preco": 50,
+          "duracaoMinutos": 30
+        }
+      ],
+      "redesSociais": [],
+      "horariosSemanais": [
+        {
+          "diaSemana": 1,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 2,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 3,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 4,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 5,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 6,
+          "inicio": "09:00",
+          "fim": "13:00"
+        }
+      ],
+      "excecoes": []
+    },
+    {
+      "id": "64c8c3c2-5373-4e78-b967-55b30dbf9a50",
+      "nome": "Barbearia Estilo Uai",
+      "descricao": "Barbearia com cortes masculinos, barba e acabamento personalizado. Um espaço acolhedor para cuidar do visual com hora marcada.",
+      "logoUrl": "/uploads/perfil-barbearia.jpg",
+      "fotoUrl": "/uploads/perfil-barbearia.jpg",
+      "endereco": {
+        "bairro": "",
+        "cidade": "Betim",
+        "estado": "MG",
+        "latitude": -19.9944,
+        "longitude": -44.1845
+      },
+      "precisaoCoordenadas": "aleatória para demonstração",
+      "categorias": [
+        {
+          "id": "3b941fce-26a4-4d87-8820-a212192f4649",
+          "nome": "Barbearia",
+          "slug": "barbearia",
+          "descricao": "Corte de cabelo, barba e cuidados masculinos."
+        }
+      ],
+      "publicosAlvo": [],
+      "servicos": [
+        {
+          "id": "8a3c3bb3-6916-484a-89b6-4ab830eb83b3",
+          "nome": "Corte masculino",
+          "descricao": "Corte de cabelo com acabamento personalizado.",
+          "preco": 50,
+          "duracaoMinutos": 40
+        },
+        {
+          "id": "c8dfb0a7-2449-46a6-94bb-9c7501d23543",
+          "nome": "Barba completa",
+          "descricao": "Aparar, desenhar e finalizar a barba.",
+          "preco": 40,
+          "duracaoMinutos": 30
+        }
+      ],
+      "redesSociais": [],
+      "horariosSemanais": [
+        {
+          "diaSemana": 1,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 2,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 3,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 4,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 5,
+          "inicio": "09:00",
+          "fim": "18:00"
+        },
+        {
+          "diaSemana": 6,
+          "inicio": "09:00",
+          "fim": "13:00"
+        }
+      ],
+      "excecoes": []
     }
   ],
   "categorias": [
@@ -371,117 +749,37 @@
       "id": "3b941fce-26a4-4d87-8820-a212192f4649",
       "nome": "Barbearia",
       "slug": "barbearia",
-      "descricao": "Corte de cabelo, barba e cuidados masculinos."
+      "descricao": "Corte de cabelo, barba e cuidados masculinos.",
+      "ativo": true
     },
     {
       "id": "472d1502-3e9d-43a3-b6f7-c258a7d9e8fb",
       "nome": "Salão de beleza",
       "slug": "salao-de-beleza",
-      "descricao": "Serviços de beleza e cuidados pessoais."
+      "descricao": "Serviços de beleza e cuidados pessoais.",
+      "ativo": true
     },
     {
       "id": "8c3c7833-020e-4359-bdb4-fc749f5eba1a",
       "nome": "Pet shop",
       "slug": "pet-shop",
-      "descricao": "Serviços e cuidados para animais de estimação."
+      "descricao": "Serviços e cuidados para animais de estimação.",
+      "ativo": true
     },
     {
       "id": "2a2ebc43-3d21-4ae5-a3b2-6331a21bfe97",
       "nome": "Lava-jato",
       "slug": "lava-jato",
-      "descricao": "Lavagem e estética automotiva."
+      "descricao": "Lavagem e estética automotiva.",
+      "ativo": true
     },
     {
       "id": "4cad18d1-f4ee-4c1a-9fec-a3ccb7034d2e",
       "nome": "Clínica de estética",
       "slug": "clinica-de-estetica",
-      "descricao": "Tratamentos estéticos e de bem-estar."
+      "descricao": "Tratamentos estéticos e de bem-estar.",
+      "ativo": true
     }
   ],
-  "publicosAlvo": [
-    {
-      "id": "1eb565f8-0252-4ebb-981e-a433b0803ee7",
-      "nome": "Crianças",
-      "slug": "criancas",
-      "descricao": "Atendimento para crianças."
-    },
-    {
-      "id": "c0827037-7dce-4bf9-88ff-d258c018e2e6",
-      "nome": "Adolescentes",
-      "slug": "adolescentes",
-      "descricao": "Atendimento para adolescentes."
-    },
-    {
-      "id": "ac9ee8a9-74d2-4cbc-90a7-322de7fe1725",
-      "nome": "Jovens adultos",
-      "slug": "jovens-adultos",
-      "descricao": "Atendimento para jovens adultos."
-    },
-    {
-      "id": "a0b297ca-1745-4b6e-804a-19fbe84b13eb",
-      "nome": "Adultos",
-      "slug": "adultos",
-      "descricao": "Atendimento para adultos."
-    },
-    {
-      "id": "cf27c9df-2814-46aa-9883-f59ab4203e23",
-      "nome": "Idosos",
-      "slug": "idosos",
-      "descricao": "Atendimento para idosos."
-    },
-    {
-      "id": "1ba2aabb-c4c1-491f-add1-a09295d700fd",
-      "nome": "Mulheres",
-      "slug": "mulheres",
-      "descricao": "Atendimento para mulheres."
-    },
-    {
-      "id": "0ccfc7a2-3c31-4fba-abca-45a0f41c4e2b",
-      "nome": "Homens",
-      "slug": "homens",
-      "descricao": "Atendimento para homens."
-    },
-    {
-      "id": "19da182e-2d65-4e03-8c02-1e4d67dd1e17",
-      "nome": "Famílias",
-      "slug": "familias",
-      "descricao": "Atendimento para famílias."
-    },
-    {
-      "id": "6681c7c3-99d5-417b-979d-71900d4f99c7",
-      "nome": "Casais",
-      "slug": "casais",
-      "descricao": "Atendimento para casais."
-    },
-    {
-      "id": "b2a6b3f1-3b10-4c85-b1da-7718ffc9db62",
-      "nome": "Gestantes",
-      "slug": "gestantes",
-      "descricao": "Atendimento para gestantes."
-    },
-    {
-      "id": "95f85004-f4dc-487e-a21f-71813dd781a7",
-      "nome": "Pessoas com deficiência",
-      "slug": "pessoas-com-deficiencia",
-      "descricao": "Atendimento acessível."
-    },
-    {
-      "id": "2bb170d8-aaef-4d61-916a-602727132ee9",
-      "nome": "Donos de pets",
-      "slug": "donos-de-pets",
-      "descricao": "Atendimento para tutores de animais."
-    },
-    {
-      "id": "f582843a-6a36-4e1e-aca0-0538e57d7d92",
-      "nome": "Empresas e profissionais",
-      "slug": "empresas-e-profissionais",
-      "descricao": "Atendimento para empresas e profissionais."
-    },
-    {
-      "id": "e4867e96-e0f7-47f1-abe5-b80f53f49013",
-      "nome": "Moradores do bairro",
-      "slug": "moradores-do-bairro",
-      "descricao": "Atendimento para moradores da região."
-    }
-  ]
+  "publicosAlvo": []
 }

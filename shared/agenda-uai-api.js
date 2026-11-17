@@ -3,9 +3,9 @@
   'use strict';
   const scriptUrl = document.currentScript?.src || new URL('agenda-uai-api.js', location.href).href;
   const root = new URL('../', scriptUrl);
-  const STORAGE = 'agendauai:static:v1';
-  const SESSION = 'agendauai:static:user';
-  const SELECTED = 'agendauai:static:store';
+  const STORAGE = 'agendauai:static:v2';
+  const SESSION = 'agendauai:static:v2:user';
+  const SELECTED = 'agendauai:static:v2:store';
   const id = () => crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
   const read = () => { try { return JSON.parse(localStorage.getItem(STORAGE)) || { users:[], stores:[], services:[], appointments:[], availability:[], exceptions:[], socials:[], photos:[], reviews:[] }; } catch { return { users:[], stores:[], services:[], appointments:[], availability:[], exceptions:[], socials:[], photos:[], reviews:[] }; } };
   const write = state => { try { localStorage.setItem(STORAGE, JSON.stringify(state)); } catch { throw new Error('O armazenamento deste navegador está cheio. Reduza/remova fotos e tente novamente.'); } };
@@ -34,11 +34,11 @@
   async function stores() {
     const [catalog,state]=await Promise.all([getCatalog(),Promise.resolve(read())]);
     const initial=(catalog.lojas||[]).map(s=>({...s,logo_url:s.logoUrl,foto_url:s.fotoUrl,servicos:s.servicos||[],categoriaId:s.categorias?.[0]?.id,categorias:s.categorias||[]}));
-    const byId=new Map([...initial,...state.stores].map(s=>[s.id,s]));
+    const byId=new Map([...state.stores,...initial].map(s=>[s.id,s]));
     return [...byId.values()].filter(s=>s.status!=='arquivada').map(s=>toStore(s,catalog.categorias||[])).sort((a,b)=>a.nome.localeCompare(b.nome,'pt-BR'));
   }
   const selectedStore = async () => { const state=read(), sid=getCurrentStoreId(state); return (await stores()).find(s=>s.id===sid)||null; };
-  const listServices = async () => { const s=await selectedStore(); if(!s)return []; const state=read(); const extra=state.services.filter(x=>x.loja_id===s.id); return [...(s.servicos||[]),...extra].map(x=>({id:x.id||id(),nome:x.nome,descricao:x.descricao||'',preco:Number(x.preco)||0,duracaoMinutos:Number(x.duracaoMinutos||x.duracao_minutos)||30,ativo:x.ativo!==false})); };
+  const listServices = async () => { const s=await selectedStore(); if(!s)return []; const state=read(); const isLocalStore=state.stores.some(x=>x.id===s.id); const extra=isLocalStore?state.services.filter(x=>x.loja_id===s.id):[]; return [...(s.servicos||[]),...extra].map(x=>({id:x.id||id(),nome:x.nome,descricao:x.descricao||'',preco:Number(x.preco)||0,duracaoMinutos:Number(x.duracaoMinutos||x.duracao_minutos)||30,ativo:x.ativo!==false})); };
   const listAppointments = async (status='') => { const s=await selectedStore(), user=activeUser(); let items=read().appointments; if(s)items=items.filter(x=>x.lojaId===s.id); else if(user)items=items.filter(x=>x.clienteId===user.id); if(status)items=items.filter(x=>x.status===status); return items; };
   const methods = {
     isStaticDemo:true,

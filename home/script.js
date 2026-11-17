@@ -24,7 +24,7 @@ function distanciaKm(lat1, lng1, lat2, lng2) {
 }
 function lojasParaOMapa() {
   return lojasPublicadasMapa.filter(loja => loja.endereco?.latitude !== null && loja.endereco?.longitude !== null && Number.isFinite(Number(loja.endereco?.latitude)) && Number.isFinite(Number(loja.endereco?.longitude)) && Math.abs(Number(loja.endereco.latitude)) <= 90 && Math.abs(Number(loja.endereco.longitude)) <= 180).map(loja => ({
-    nome: loja.nome, categoria: (loja.categorias || []).join(' · ') || 'Serviços locais',
+    nome: loja.nome, categoria: (loja.categorias || []).join(' · ') || 'Serviços locais', cidade: loja.endereco?.cidade || '',
     lat: Number(loja.endereco.latitude), lng: Number(loja.endereco.longitude),
     link: `../Página%20de%20feed/perfil-publico.html?loja=${encodeURIComponent(loja.id)}`
   }));
@@ -67,13 +67,13 @@ function mostrarMapa(coords) {
   agrupadas.forEach(grupo => {
     const [latLoja,lngLoja] = [grupo[0].lat,grupo[0].lng];
     const popup = document.createElement('div');
-    const aviso = document.createElement('p'); aviso.textContent = 'Ponto aproximado: centro do bairro informado.'; popup.append(aviso);
     grupo.forEach(loja => {
       const item = document.createElement('p');
       const strong = document.createElement('strong'); strong.textContent = loja.nome;
       const category = document.createElement('div'); category.textContent = loja.categoria;
+      const city = document.createElement('div'); city.textContent = loja.cidade;
       const link = document.createElement('a'); link.href = loja.link; link.textContent = 'Ver perfil e agendar';
-      item.append(strong, category);
+      item.append(strong, category, city);
       if (userCoords) { const km = distanciaKm(lat, lng, loja.lat, loja.lng).toFixed(1).replace('.', ','); const distance = document.createElement('div'); distance.textContent = `A ${km} km da sua localização`; item.append(distance); }
       item.append(link); popup.append(item);
     });
